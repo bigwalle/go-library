@@ -10,10 +10,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/ecode"
-	"github.com/welcome112s/go-library/log"
-	"github.com/welcome112s/go-library/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/net/rpc/warden/proto/testproto"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
+	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/proto/testproto"
 )
 
 var (

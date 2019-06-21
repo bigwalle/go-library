@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/net/rpc/context"
+	"github.com/welcome112s/go-library/pkg/net/rpc/context"
 
 	"golang.org/x/time/rate"
 )

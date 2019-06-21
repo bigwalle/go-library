@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/container/pool"
+	"github.com/welcome112s/go-library/pkg/container/pool"
 )
 
 type poolTestConn struct {

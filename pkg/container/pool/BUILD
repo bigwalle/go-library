@@ -28,7 +28,7 @@ go_library(
         "pool.go",
         "slice.go",
     ],
-    importpath = "github.com/welcome112s/go-library/container/pool",
+    importpath = "github.com/welcome112s/go-library/pkg/container/pool",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = ["//library/time:go_default_library"],

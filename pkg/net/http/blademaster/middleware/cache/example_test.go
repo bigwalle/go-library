@@ -3,13 +3,13 @@ package cache_test
 import (
 	"time"
 
-	"github.com/welcome112s/go-library/cache/memcache"
-	"github.com/welcome112s/go-library/container/pool"
-	"github.com/welcome112s/go-library/ecode"
-	"github.com/welcome112s/go-library/net/http/blademaster"
-	"github.com/welcome112s/go-library/net/http/blademaster/middleware/cache"
-	"github.com/welcome112s/go-library/net/http/blademaster/middleware/cache/store"
-	xtime "github.com/welcome112s/go-library/time"
+	"github.com/welcome112s/go-library/pkg/cache/memcache"
+	"github.com/welcome112s/go-library/pkg/container/pool"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/cache"
+	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/cache/store"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 
 	"github.com/pkg/errors"
 )

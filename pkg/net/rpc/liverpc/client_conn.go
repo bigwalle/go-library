@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/welcome112s/go-library/conf/env"
-	"github.com/welcome112s/go-library/log"
-	"github.com/welcome112s/go-library/net/metadata"
-	"github.com/welcome112s/go-library/net/trace"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/trace"
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/json-iterator/go"

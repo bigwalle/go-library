@@ -3,7 +3,7 @@ package blademaster
 import (
 	"strconv"
 
-	"github.com/welcome112s/go-library/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
 )
 
 const (

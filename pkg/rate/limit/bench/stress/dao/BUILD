@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["dao.go"],
-    importpath = "github.com/welcome112s/go-library/rate/limit/bench/stress/dao",
+    importpath = "github.com/welcome112s/go-library/pkg/rate/limit/bench/stress/dao",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

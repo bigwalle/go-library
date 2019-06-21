@@ -1,19 +1,19 @@
 package log
 
 import (
-	"context"
-	"fmt"
-	stdlog "log"
-	"net"
-	"strconv"
-	"sync"
-	"time"
+  "context"
+  "fmt"
+  "go-library/pkg/log/internal"
+  stdlog "log"
+  "net"
+  "strconv"
+  "sync"
+  "time"
 
-	"github.com/welcome112s/go-library/conf/env"
-	"github.com/welcome112s/go-library/log/internal"
-	"github.com/welcome112s/go-library/net/metadata"
-	"github.com/welcome112s/go-library/net/trace"
-	xtime "github.com/welcome112s/go-library/time"
+  "github.com/welcome112s/go-library/pkg/conf/env"
+  "github.com/welcome112s/go-library/pkg/net/metadata"
+  "github.com/welcome112s/go-library/pkg/net/trace"
+  xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 const (
@@ -29,7 +29,7 @@ var (
 	_logSeparator = []byte("\u0001")
 
 	_defaultTaskIDs = map[string]string{
-		env.DeployEnvFat1: "000069",
+		//env.DeployEnvFat1: "000069",
 		env.DeployEnvUat:  "000069",
 		env.DeployEnvPre:  "000161",
 		env.DeployEnvProd: "000161",

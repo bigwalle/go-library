@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/welcome112s/go-library/ecode"
-	"github.com/welcome112s/go-library/log"
-	"github.com/welcome112s/go-library/net/rpc/context"
-	"github.com/welcome112s/go-library/stat"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/rpc/context"
+	"github.com/welcome112s/go-library/pkg/stat"
 
 	"golang.org/x/time/rate"
 )

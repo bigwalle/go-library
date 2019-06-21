@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/welcome112s/go-library/conf/env"
-	"github.com/welcome112s/go-library/naming"
-	"github.com/welcome112s/go-library/net/rpc/warden/resolver"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden/resolver"
 )
 
 const (

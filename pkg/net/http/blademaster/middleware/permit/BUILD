@@ -29,7 +29,7 @@ go_library(
         "permit.go",
         "session.go",
     ],
-    importpath = "github.com/welcome112s/go-library/net/http/blademaster/middleware/permit",
+    importpath = "github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/permit",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

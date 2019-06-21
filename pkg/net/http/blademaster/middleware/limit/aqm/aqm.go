@@ -3,12 +3,12 @@ package aqm
 import (
 	"context"
 
-	"github.com/welcome112s/go-library/container/queue/aqm"
-	"github.com/welcome112s/go-library/ecode"
-	bm "github.com/welcome112s/go-library/net/http/blademaster"
-	"github.com/welcome112s/go-library/rate"
-	"github.com/welcome112s/go-library/rate/limit"
-	"github.com/welcome112s/go-library/stat/prom"
+	"github.com/welcome112s/go-library/pkg/container/queue/aqm"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/rate"
+	"github.com/welcome112s/go-library/pkg/rate/limit"
+	"github.com/welcome112s/go-library/pkg/stat/prom"
 )
 
 const (

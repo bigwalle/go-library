@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/container/pool"
-	xtime "github.com/welcome112s/go-library/time"
+	"github.com/welcome112s/go-library/pkg/container/pool"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 var testMemcacheAddr = "127.0.0.1:11211"

@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"sync/atomic"
 
-	"github.com/welcome112s/go-library/log"
-	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/log"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
 
 	"golang.org/x/time/rate"
 )

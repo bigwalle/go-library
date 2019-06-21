@@ -3,7 +3,7 @@ package log_test
 import (
 	"context"
 
-	"github.com/welcome112s/go-library/log"
+	"github.com/welcome112s/go-library/pkg/log"
 )
 
 // This example will logging a text to log file.

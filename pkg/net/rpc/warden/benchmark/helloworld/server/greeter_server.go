@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/welcome112s/go-library/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/net/rpc/warden/proto/testproto"
-	xtime "github.com/welcome112s/go-library/time"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
+	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/proto/testproto"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

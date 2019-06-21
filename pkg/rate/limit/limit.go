@@ -4,10 +4,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/welcome112s/go-library/container/queue/aqm"
-	"github.com/welcome112s/go-library/log"
-	"github.com/welcome112s/go-library/rate"
-	"github.com/welcome112s/go-library/rate/vegas"
+	"github.com/welcome112s/go-library/pkg/container/queue/aqm"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/rate"
+	"github.com/welcome112s/go-library/pkg/rate/vegas"
 )
 
 var _ rate.Limiter = &Limiter{}

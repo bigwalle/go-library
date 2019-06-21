@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["meta.go"],
-    importpath = "github.com/welcome112s/go-library/net/rpc/warden/metadata",
+    importpath = "github.com/welcome112s/go-library/pkg/net/rpc/warden/metadata",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

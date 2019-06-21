@@ -16,14 +16,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/conf/env"
-	"github.com/welcome112s/go-library/ecode"
-	xlog "github.com/welcome112s/go-library/log"
-	"github.com/welcome112s/go-library/net/metadata"
-	"github.com/welcome112s/go-library/net/netutil/breaker"
-	"github.com/welcome112s/go-library/net/trace"
-	"github.com/welcome112s/go-library/stat"
-	xtime "github.com/welcome112s/go-library/time"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	xlog "github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/stat"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 
 	perr "github.com/pkg/errors"
 )

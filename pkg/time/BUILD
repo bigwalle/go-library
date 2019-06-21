@@ -22,7 +22,7 @@ filegroup(
 go_library(
     name = "go_default_library",
     srcs = ["time.go"],
-    importpath = "github.com/welcome112s/go-library/time",
+    importpath = "github.com/welcome112s/go-library/pkg/time",
     tags = ["automanaged"],
 )
 

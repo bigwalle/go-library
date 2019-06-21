@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/welcome112s/go-library/ecode"
-	nmd "github.com/welcome112s/go-library/net/metadata"
-	"github.com/welcome112s/go-library/stat/summary"
-	"github.com/welcome112s/go-library/stat/sys/cpu"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	nmd "github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/stat/summary"
+	"github.com/welcome112s/go-library/pkg/stat/sys/cpu"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"

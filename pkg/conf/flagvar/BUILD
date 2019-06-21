@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["flagvar.go"],
-    importpath = "github.com/welcome112s/go-library/conf/flagvar",
+    importpath = "github.com/welcome112s/go-library/pkg/conf/flagvar",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

@@ -28,7 +28,7 @@ go_library(
         "discovery.go",
         "shuffle.go",
     ],
-    importpath = "github.com/welcome112s/go-library/naming/discovery",
+    importpath = "github.com/welcome112s/go-library/pkg/naming/discovery",
     tags = ["automanaged"],
     deps = [
         "//library/conf/env:go_default_library",

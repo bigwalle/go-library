@@ -9,10 +9,10 @@ import (
 	"net/http/httputil"
 	"net/url"
 
-	"github.com/welcome112s/go-library/conf/env"
-	"github.com/welcome112s/go-library/log"
-	bm "github.com/welcome112s/go-library/net/http/blademaster"
-	"github.com/welcome112s/go-library/net/metadata"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/log"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
 
 	"github.com/pkg/errors"
 )

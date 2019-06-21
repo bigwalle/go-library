@@ -9,10 +9,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/net/netutil/breaker"
-	"github.com/welcome112s/go-library/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/net/rpc/warden/proto/testproto"
-	xtime "github.com/welcome112s/go-library/time"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
+	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/proto/testproto"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 var (

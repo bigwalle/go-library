@@ -16,7 +16,7 @@ go_library(
     name = "go_default_library",
     srcs = ["main.go"],
     data = ["stress-test.toml"],
-    importpath = "github.com/welcome112s/go-library/rate/limit/bench/stress/cmd",
+    importpath = "github.com/welcome112s/go-library/pkg/rate/limit/bench/stress/cmd",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

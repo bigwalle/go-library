@@ -22,7 +22,7 @@ filegroup(
 go_library(
     name = "go_default_library",
     srcs = ["xstr.go"],
-    importpath = "github.com/welcome112s/go-library/xstr",
+    importpath = "github.com/welcome112s/go-library/pkg/xstr",
     tags = ["automanaged"],
 )
 

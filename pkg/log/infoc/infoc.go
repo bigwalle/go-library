@@ -15,7 +15,7 @@ import (
 	"github.com/welcome112s/go-library/pkg/log"
 	"github.com/welcome112s/go-library/pkg/net/metadata"
 	"github.com/welcome112s/go-library/pkg/net/netutil"
-	xtime "github.com/welcome112s/go-library/time"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 const (
