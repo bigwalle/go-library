@@ -7,15 +7,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/internal/proto/testproto"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden/resolver"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/naming"
+	"go-library/pkg/net/netutil/breaker"
+	"go-library/pkg/net/rpc/warden"
+	"go-library/pkg/net/rpc/warden/balancer/wrr"
+	pb "go-library/pkg/net/rpc/warden/proto/testproto"
+	"go-library/pkg/net/rpc/warden/resolver"
+	xtime "go-library/pkg/time"
 
 	"github.com/stretchr/testify/assert"
+	"google.golang.org/grpc"
 )
 
 var testServerMap map[string]*testServer
@@ -168,8 +170,7 @@ func TestErrorResolver(t *testing.T) {
 	resetCount()
 }
 
-// FIXME
-func testClusterResolver(t *testing.T) {
+func TestClusterResolver(t *testing.T) {
 	mockResolver := newMockDiscoveryBuilder()
 	resolver.Set(mockResolver)
 	mockResolver.registry(testAppID, "server1", "127.0.0.1:18081", map[string]string{"cluster": "c1"})
@@ -178,7 +179,7 @@ func testClusterResolver(t *testing.T) {
 	mockResolver.registry(testAppID, "server4", "127.0.0.1:18084", map[string]string{})
 	mockResolver.registry(testAppID, "server5", "127.0.0.1:18084", map[string]string{})
 
-	client := warden.NewClient(&warden.ClientConfig{Clusters: []string{"c1"}})
+	client := warden.NewClient(&warden.ClientConfig{Clusters: []string{"c1"}}, grpc.WithBalancerName(wrr.Name))
 	conn, err := client.Dial(context.TODO(), "mockdiscovery://authority/main.test?cluster=c2")
 	if err != nil {
 		t.Fatalf("create client fail!err%s", err)
@@ -201,15 +202,14 @@ func testClusterResolver(t *testing.T) {
 	resetCount()
 }
 
-// FIXME
-func testNoClusterResolver(t *testing.T) {
+func TestNoClusterResolver(t *testing.T) {
 	mockResolver := newMockDiscoveryBuilder()
 	resolver.Set(mockResolver)
 	mockResolver.registry(testAppID, "server1", "127.0.0.1:18081", map[string]string{"cluster": "c1"})
 	mockResolver.registry(testAppID, "server2", "127.0.0.1:18082", map[string]string{"cluster": "c1"})
 	mockResolver.registry(testAppID, "server3", "127.0.0.1:18083", map[string]string{"cluster": "c2"})
 	mockResolver.registry(testAppID, "server4", "127.0.0.1:18084", map[string]string{})
-	client := warden.NewClient(&warden.ClientConfig{})
+	client := warden.NewClient(&warden.ClientConfig{}, grpc.WithBalancerName(wrr.Name))
 	conn, err := client.Dial(context.TODO(), "mockdiscovery://authority/main.test")
 	if err != nil {
 		t.Fatalf("create client fail!err%s", err)
@@ -243,7 +243,7 @@ func TestZoneResolver(t *testing.T) {
 	env.Zone = "testsh"
 	mockResolver.registry(testAppID, "server2", "127.0.0.1:18082", map[string]string{})
 	env.Zone = "hhhh"
-	client := warden.NewClient(&warden.ClientConfig{Zone: "testsh"})
+	client := warden.NewClient(&warden.ClientConfig{Zone: "testsh"}, grpc.WithBalancerName(wrr.Name))
 	conn, err := client.Dial(context.TODO(), "mockdiscovery://authority/main.test")
 	if err != nil {
 		t.Fatalf("create client fail!err%s", err)
@@ -265,8 +265,7 @@ func TestZoneResolver(t *testing.T) {
 	resetCount()
 }
 
-// FIXME
-func testSubsetConn(t *testing.T) {
+func TestSubsetConn(t *testing.T) {
 	mockResolver := newMockDiscoveryBuilder()
 	resolver.Set(mockResolver)
 	mockResolver.registry(testAppID, "server1", "127.0.0.1:18081", map[string]string{})

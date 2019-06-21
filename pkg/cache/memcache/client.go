@@ -107,8 +107,9 @@ func (mc *Memcache) GetMulti(c context.Context, keys []string) (*Replies, error)
 	conn := mc.pool.Get(c)
 	items, err := conn.GetMulti(keys)
 	rs := &Replies{err: err, items: items, conn: conn, usedItems: make(map[string]struct{}, len(keys))}
-	if (err != nil) || (len(items) == 0) {
-		rs.Close()
+	if err != nil {
+		conn.Close()
+		rs.closed = true
 	}
 	return rs, err
 }
@@ -134,12 +135,12 @@ func (rs *Replies) Scan(key string, v interface{}) (err error) {
 	}
 	item, ok := rs.items[key]
 	if !ok {
-		rs.Close()
 		return ErrNotFound
 	}
 	rs.usedItems[key] = struct{}{}
 	err = rs.conn.Scan(item, v)
-	if (err != nil) || (len(rs.items) == len(rs.usedItems)) {
+	shouldClose := len(rs.items) == len(rs.usedItems)
+	if shouldClose {
 		rs.Close()
 	}
 	return

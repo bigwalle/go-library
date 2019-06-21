@@ -3,16 +3,16 @@ package log
 import (
 	"context"
 	"fmt"
-	"math"
 	"runtime"
 	"strconv"
-	"time"
+	"sync"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log/internal/core"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/trace"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/net/trace"
 )
+
+var fm sync.Map
 
 func addExtraField(ctx context.Context, fields map[string]interface{}) {
 	if t, ok := trace.FromContext(ctx); ok {
@@ -33,39 +33,22 @@ func addExtraField(ctx context.Context, fields map[string]interface{}) {
 	}
 	fields[_deplyEnv] = env.DeployEnv
 	fields[_zone] = env.Zone
-	fields[_appID] = c.AppID
+	fields[_appID] = c.Family
 	fields[_instanceID] = c.Host
 	if metadata.Bool(ctx, metadata.Mirror) {
 		fields[_mirror] = true
 	}
 }
 
-// toMap convert D slice to map[string]interface{} for legacy file and stdout.
-func toMap(args ...D) map[string]interface{} {
-	d := make(map[string]interface{}, 10+len(args))
-	for _, arg := range args {
-		switch arg.Type {
-		case core.UintType, core.Uint64Type, core.IntType, core.Int64Type:
-			d[arg.Key] = arg.Int64Val
-		case core.StringType:
-			d[arg.Key] = arg.StringVal
-		case core.Float32Type:
-			d[arg.Key] = math.Float32frombits(uint32(arg.Int64Val))
-		case core.Float64Type:
-			d[arg.Key] = math.Float64frombits(uint64(arg.Int64Val))
-		case core.DurationType:
-			d[arg.Key] = time.Duration(arg.Int64Val)
-		default:
-			d[arg.Key] = arg.Value
-		}
-	}
-	return d
-}
-
 // funcName get func name.
 func funcName(skip int) (name string) {
-	if _, file, lineNo, ok := runtime.Caller(skip); ok {
-		return file + ":" + strconv.Itoa(lineNo)
+	if pc, _, lineNo, ok := runtime.Caller(skip); ok {
+		if v, ok := fm.Load(pc); ok {
+			name = v.(string)
+		} else {
+			name = runtime.FuncForPC(pc).Name() + ":" + strconv.FormatInt(int64(lineNo), 10)
+			fm.Store(pc, name)
+		}
 	}
-	return "unknown:0"
+	return
 }

@@ -6,11 +6,11 @@ import (
 	"io"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/internal/proto/testproto"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/log"
+	"go-library/pkg/net/netutil/breaker"
+	"go-library/pkg/net/rpc/warden"
+	pb "go-library/pkg/net/rpc/warden/proto/testproto"
+	xtime "go-library/pkg/time"
 
 	"google.golang.org/grpc"
 )

@@ -3,12 +3,13 @@ package blademaster
 import (
 	"bytes"
 	"context"
+	"crypto/md5"
 	"crypto/tls"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
 	"net"
-	xhttp "net/http"
 	"net/url"
 	"os"
 	"runtime"
@@ -17,11 +18,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/stat"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	xhttp "net/http"
+
+	"go-library/pkg/conf/env"
+	"go-library/pkg/log"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/net/netutil/breaker"
+	"go-library/pkg/stat"
+	xtime "go-library/pkg/time"
 
 	"github.com/gogo/protobuf/proto"
 	pkgerr "github.com/pkg/errors"
@@ -29,10 +33,14 @@ import (
 
 const (
 	_minRead = 16 * 1024 // 16kb
+
+	_appKey    = "appkey"
+	_appSecret = "appsecret"
+	_ts        = "ts"
 )
 
 var (
-	_noKickUserAgent = "blademaster"
+	_noKickUserAgent = "haoguanwei@bilibili.com "
 	clientStats      = stat.HTTPClient
 )
 
@@ -43,8 +51,15 @@ func init() {
 	}
 }
 
+// App bilibili intranet authorization.
+type App struct {
+	Key    string
+	Secret string
+}
+
 // ClientConfig is http client conf.
 type ClientConfig struct {
+	*App
 	Dial      xtime.Duration
 	Timeout   xtime.Duration
 	KeepAlive xtime.Duration
@@ -88,6 +103,10 @@ func NewClient(c *ClientConfig) *Client {
 	client.urlConf = make(map[string]*ClientConfig)
 	client.hostConf = make(map[string]*ClientConfig)
 	client.breaker = breaker.NewGroup(c.Breaker)
+	// check appkey
+	if c.Key == "" || c.Secret == "" {
+		panic("http client must config appkey and appsecret")
+	}
 	if c.Timeout <= 0 {
 		panic("must config http timeout!!!")
 	}
@@ -109,6 +128,10 @@ func (client *Client) SetTransport(t xhttp.RoundTripper) {
 // SetConfig set client config.
 func (client *Client) SetConfig(c *ClientConfig) {
 	client.mutex.Lock()
+	if c.App != nil {
+		client.conf.App.Key = c.App.Key
+		client.conf.App.Secret = c.App.Secret
+	}
 	if c.Timeout > 0 {
 		client.conf.Timeout = c.Timeout
 	}
@@ -136,13 +159,22 @@ func (client *Client) SetConfig(c *ClientConfig) {
 // NewRequest new http request with method, uri, ip, values and headers.
 // TODO(zhoujiahui): param realIP should be removed later.
 func (client *Client) NewRequest(method, uri, realIP string, params url.Values) (req *xhttp.Request, err error) {
+	enc, err := client.sign(params)
+	if err != nil {
+		err = pkgerr.Wrapf(err, "uri:%s,params:%v", uri, params)
+		return
+	}
+	ru := uri
+	if enc != "" {
+		ru = uri + "?" + enc
+	}
 	if method == xhttp.MethodGet {
-		req, err = xhttp.NewRequest(xhttp.MethodGet, fmt.Sprintf("%s?%s", uri, params.Encode()), nil)
+		req, err = xhttp.NewRequest(xhttp.MethodGet, ru, nil)
 	} else {
-		req, err = xhttp.NewRequest(xhttp.MethodPost, uri, strings.NewReader(params.Encode()))
+		req, err = xhttp.NewRequest(xhttp.MethodPost, uri, strings.NewReader(enc))
 	}
 	if err != nil {
-		err = pkgerr.Wrapf(err, "method:%s,uri:%s", method, uri)
+		err = pkgerr.Wrapf(err, "method:%s,uri:%s", method, ru)
 		return
 	}
 	const (
@@ -322,6 +354,39 @@ func (client *Client) onBreaker(breaker breaker.Breaker, err *error) {
 	} else {
 		breaker.MarkSuccess()
 	}
+}
+
+// sign calc appkey and appsecret sign.
+func (client *Client) sign(params url.Values) (query string, err error) {
+	client.mutex.RLock()
+	key := client.conf.Key
+	secret := client.conf.Secret
+	client.mutex.RUnlock()
+	if params == nil {
+		params = url.Values{}
+	}
+	params.Set(_appKey, key)
+	if params.Get(_appSecret) != "" {
+		log.Warn("utils http get must not have parameter appSecret")
+	}
+	if params.Get(_ts) == "" {
+		params.Set(_ts, strconv.FormatInt(time.Now().Unix(), 10))
+	}
+	tmp := params.Encode()
+	if strings.IndexByte(tmp, '+') > -1 {
+		tmp = strings.Replace(tmp, "+", "%20", -1)
+	}
+	var b bytes.Buffer
+	b.WriteString(tmp)
+	b.WriteString(secret)
+	mh := md5.Sum(b.Bytes())
+	// query
+	var qb bytes.Buffer
+	qb.WriteString(tmp)
+	qb.WriteString("&sign=")
+	qb.WriteString(hex.EncodeToString(mh[:]))
+	query = qb.String()
+	return
 }
 
 // realUrl return url with http://host/params.

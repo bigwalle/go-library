@@ -7,35 +7,34 @@ import (
 	"time"
 )
 
+const defaultPattern = "%L %d-%T %f %M"
+
 var _defaultStdout = NewStdout()
 
 // StdoutHandler stdout log handler
 type StdoutHandler struct {
 	out    io.Writer
-	err    io.Writer
 	render Render
 }
 
 // NewStdout create a stdout log handler
 func NewStdout() *StdoutHandler {
 	return &StdoutHandler{
-		out:    os.Stdout,
-		err:    os.Stderr,
-		render: newPatternRender("[%D %T] [%s] %M"),
+		out:    os.Stderr,
+		render: newPatternRender(defaultPattern),
 	}
 }
 
 // Log stdout loging, only for developing env.
 func (h *StdoutHandler) Log(ctx context.Context, lv Level, args ...D) {
-	d := toMap(args...)
+	d := make(map[string]interface{}, 10+len(args))
+	for _, arg := range args {
+		d[arg.Key] = arg.Value
+	}
 	// add extra fields
 	addExtraField(ctx, d)
 	d[_time] = time.Now().Format(_timeFormat)
-	if lv <= _infoLevel {
-		h.render.Render(h.out, d)
-	} else {
-		h.render.Render(h.err, d)
-	}
+	h.render.Render(h.out, d)
 	h.out.Write([]byte("\n"))
 }
 

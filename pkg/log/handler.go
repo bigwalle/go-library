@@ -16,6 +16,8 @@ const (
 	_level = "level"
 	// log time.
 	_time = "time"
+	// request path.
+	// _title = "title"
 	// log file.
 	_source = "source"
 	// common log filed.
@@ -27,7 +29,7 @@ const (
 	// uniq ID from trace.
 	_tid = "traceid"
 	// request time.
-	_ts = "ts"
+	// _ts = "ts"
 	// requester.
 	_caller = "caller"
 	// container environment: prod, pre, uat, fat.
@@ -76,20 +78,20 @@ type Handlers struct {
 
 // Log handlers logging.
 func (hs Handlers) Log(c context.Context, lv Level, d ...D) {
-	var hasSource bool
+	var fn string
 	for i := range d {
 		if _, ok := hs.filters[d[i].Key]; ok {
 			d[i].Value = "***"
 		}
 		if d[i].Key == _source {
-			hasSource = true
+			fn = d[i].Value.(string)
 		}
 	}
-	if !hasSource {
-		fn := funcName(3)
-		d = append(d, KVString(_source, fn))
+	if fn == "" {
+		d = append(d, KV(_source, funcName(4)))
 	}
-	d = append(d, KV(_time, time.Now()), KVInt64(_levelValue, int64(lv)), KVString(_level, lv.String()))
+	d = append(d, KV(_time, time.Now()), KV(_levelValue, int(lv)), KV(_level, lv.String()))
+	errIncr(lv, fn)
 	for _, h := range hs.handlers {
 		h.Log(c, lv, d...)
 	}

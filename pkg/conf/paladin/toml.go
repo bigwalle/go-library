@@ -1,11 +1,10 @@
 package paladin
 
 import (
-	"bytes"
 	"reflect"
 	"strconv"
 
-	"github.com/BurntSushi/toml"
+	"github.com/naoina/toml"
 	"github.com/pkg/errors"
 )
 
@@ -32,26 +31,22 @@ func (m *TOML) UnmarshalText(text []byte) error {
 		rv := reflect.ValueOf(v)
 		switch rv.Kind() {
 		case reflect.Map:
-			buf := bytes.NewBuffer(nil)
-			err := toml.NewEncoder(buf).Encode(v)
-			// b, err := toml.Marshal(v)
+			b, err := toml.Marshal(v)
 			if err != nil {
 				return err
 			}
 			// NOTE: value is map[string]interface{}
-			values[k] = &Value{val: v, raw: buf.String()}
+			values[k] = &Value{val: v, raw: string(b)}
 		case reflect.Slice:
 			raw := map[string]interface{}{
 				k: v,
 			}
-			buf := bytes.NewBuffer(nil)
-			err := toml.NewEncoder(buf).Encode(raw)
-			// b, err := toml.Marshal(raw)
+			b, err := toml.Marshal(raw)
 			if err != nil {
 				return err
 			}
 			// NOTE: value is []interface{}
-			values[k] = &Value{val: v, raw: buf.String()}
+			values[k] = &Value{val: v, raw: string(b)}
 		case reflect.Bool:
 			b := v.(bool)
 			values[k] = &Value{val: b, raw: strconv.FormatBool(b)}

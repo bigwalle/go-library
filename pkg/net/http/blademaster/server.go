@@ -13,12 +13,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/dsn"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/ip"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/stat"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/dsn"
+	"go-library/pkg/log"
+	"go-library/pkg/net/ip"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/stat"
+	xtime "go-library/pkg/time"
 
 	"github.com/pkg/errors"
 )
@@ -73,7 +73,8 @@ func (f HandlerFunc) ServeHTTP(c *Context) {
 
 // ServerConfig is the bm server config model
 type ServerConfig struct {
-	Network      string         `dsn:"network"`
+	Network string `dsn:"network"`
+	// FIXME: rename to Address
 	Addr         string         `dsn:"address"`
 	Timeout      xtime.Duration `dsn:"query.timeout"`
 	ReadTimeout  xtime.Duration `dsn:"query.readTimeout"`
@@ -137,6 +138,33 @@ type injection struct {
 	handlers []HandlerFunc
 }
 
+// New returns a new blank Engine instance without any middleware attached.
+//
+// Deprecated: please use NewServer.
+func New() *Engine {
+	engine := &Engine{
+		RouterGroup: RouterGroup{
+			Handlers: nil,
+			basePath: "/",
+			root:     true,
+		},
+		address: ip.InternalIP(),
+		conf: &ServerConfig{
+			Timeout: xtime.Duration(time.Second),
+		},
+		mux:           http.NewServeMux(),
+		metastore:     make(map[string]map[string]interface{}),
+		methodConfigs: make(map[string]*MethodConfig),
+		injections:    make([]injection, 0),
+	}
+	engine.RouterGroup.engine = engine
+	// NOTE add prometheus monitor location
+	engine.addRoute("GET", "/metrics", monitor())
+	engine.addRoute("GET", "/metadata", engine.metadata())
+	startPerf()
+	return engine
+}
+
 // NewServer returns a new blank Engine instance without any middleware attached.
 func NewServer(conf *ServerConfig) *Engine {
 	if conf == nil {
@@ -144,7 +172,10 @@ func NewServer(conf *ServerConfig) *Engine {
 			fmt.Fprint(os.Stderr, "[blademaster] please call flag.Parse() before Init warden server, some configure may not effect.\n")
 		}
 		conf = parseDSN(_httpDSN)
+	} else {
+		fmt.Fprintf(os.Stderr, "[blademaster] config will be deprecated, argument will be ignored. please use -http flag or HTTP env to configure http server.\n")
 	}
+
 	engine := &Engine{
 		RouterGroup: RouterGroup{
 			Handlers: nil,
@@ -177,7 +208,16 @@ func (engine *Engine) SetMethodConfig(path string, mc *MethodConfig) {
 // DefaultServer returns an Engine instance with the Recovery, Logger and CSRF middleware already attached.
 func DefaultServer(conf *ServerConfig) *Engine {
 	engine := NewServer(conf)
-	engine.Use(Recovery(), Trace(), Logger())
+	engine.Use(Recovery(), Trace(), Logger(), CSRF(), Mobile())
+	return engine
+}
+
+// Default returns an Engine instance with the Recovery, Logger and CSRF middleware already attached.
+//
+// Deprecated: please use DefaultServer.
+func Default() *Engine {
+	engine := New()
+	engine.Use(Recovery(), Trace(), Logger(), CSRF(), Mobile())
 	return engine
 }
 
@@ -318,7 +358,7 @@ func (engine *Engine) Use(middleware ...Handler) IRoutes {
 
 // Ping is used to set the general HTTP ping handler.
 func (engine *Engine) Ping(handler HandlerFunc) {
-	engine.GET("/ping", handler)
+	engine.GET("/monitor/ping", handler)
 }
 
 // Register is used to export metadata to discovery.

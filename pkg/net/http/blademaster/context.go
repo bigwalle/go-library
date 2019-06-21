@@ -5,11 +5,10 @@ import (
 	"math"
 	"net/http"
 	"strconv"
-	"text/template"
 
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster/binding"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster/render"
+	"go-library/pkg/ecode"
+	"go-library/pkg/net/http/blademaster/binding"
+	"go-library/pkg/net/http/blademaster/render"
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/types"
@@ -145,8 +144,9 @@ func (c *Context) Render(code int, r render.Render) {
 	}
 
 	params := c.Request.Form
-	cb := template.JSEscapeString(params.Get("callback"))
-	jsonp := cb != ""
+
+	cb := params.Get("callback")
+	jsonp := cb != "" && params.Get("jsonp") == "jsonp"
 	if jsonp {
 		c.Writer.Write([]byte(cb))
 		c.Writer.Write(_openParen)
@@ -302,5 +302,5 @@ func (c *Context) mustBindWith(obj interface{}, b binding.Binding) (err error) {
 
 func writeStatusCode(w http.ResponseWriter, ecode int) {
 	header := w.Header()
-	header.Set("kratos-status-code", strconv.FormatInt(int64(ecode), 10))
+	header.Set("bili-status-code", strconv.FormatInt(int64(ecode), 10))
 }

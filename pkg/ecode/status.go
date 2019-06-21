@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/welcome112s/go-library/pkg/ecode/types"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
+	"go-library/pkg/ecode/internal/types"
 )
 
 // Error new status with code and message

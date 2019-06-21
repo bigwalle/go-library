@@ -10,18 +10,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/conf/flagvar"
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/naming/discovery"
-	nmd "github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden/balancer/p2c"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden/internal/status"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden/resolver"
-	"github.com/welcome112s/go-library/pkg/net/trace"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/conf/flagvar"
+	"go-library/pkg/ecode"
+	"go-library/pkg/naming"
+	"go-library/pkg/naming/discovery"
+	nmd "go-library/pkg/net/metadata"
+	"go-library/pkg/net/netutil/breaker"
+	"go-library/pkg/net/rpc/warden/balancer/wrr"
+	"go-library/pkg/net/rpc/warden/resolver"
+	"go-library/pkg/net/rpc/warden/status"
+	"go-library/pkg/net/trace"
+	xtime "go-library/pkg/time"
 
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
@@ -42,14 +42,6 @@ var (
 	}
 	_defaultClient *Client
 )
-
-func baseMetadata() metadata.MD {
-	gmd := metadata.MD{nmd.Caller: []string{env.AppID}}
-	if env.Color != "" {
-		gmd[nmd.Color] = []string{env.Color}
-	}
-	return gmd
-}
 
 // ClientConfig is rpc client conf.
 type ClientConfig struct {
@@ -79,6 +71,7 @@ func (c *Client) handle() grpc.UnaryClientInterceptor {
 	return func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) (err error) {
 		var (
 			ok     bool
+			cmd    nmd.MD
 			t      trace.Trace
 			gmd    metadata.MD
 			conf   *ClientConfig
@@ -89,12 +82,12 @@ func (c *Client) handle() grpc.UnaryClientInterceptor {
 		var ec ecode.Codes = ecode.OK
 		// apm tracing
 		if t, ok = trace.FromContext(ctx); ok {
-			t = t.Fork("", method)
+			t = t.Fork(_family, method)
 			defer t.Finish(&err)
 		}
 
 		// setup metadata
-		gmd = baseMetadata()
+		gmd = metadata.MD{}
 		trace.Inject(t, trace.GRPCFormat, gmd)
 		c.mutex.RLock()
 		if conf, ok = c.conf.Method[method]; !ok {
@@ -109,13 +102,24 @@ func (c *Client) handle() grpc.UnaryClientInterceptor {
 		defer onBreaker(brk, &err)
 		_, ctx, cancel = conf.Timeout.Shrink(ctx)
 		defer cancel()
-		nmd.Range(ctx,
-			func(key string, value interface{}) {
-				if valstr, ok := value.(string); ok {
-					gmd[key] = []string{valstr}
-				}
-			},
-			nmd.IsOutgoingKey)
+		// meta color
+		if cmd, ok = nmd.FromContext(ctx); ok {
+			var color, ip, port string
+			if color, ok = cmd[nmd.Color].(string); ok {
+				gmd[nmd.Color] = []string{color}
+			}
+			if ip, ok = cmd[nmd.RemoteIP].(string); ok {
+				gmd[nmd.RemoteIP] = []string{ip}
+			}
+			if port, ok = cmd[nmd.RemotePort].(string); ok {
+				gmd[nmd.RemotePort] = []string{port}
+			}
+		} else {
+			// NOTE: dead code delete it after test in futrue
+			cmd = nmd.MD{}
+			ctx = nmd.NewContext(ctx, cmd)
+		}
+		gmd[nmd.Caller] = []string{env.AppID}
 		// merge with old matadata if exists
 		if oldmd, ok := metadata.FromOutgoingContext(ctx); ok {
 			gmd = metadata.Join(gmd, oldmd)
@@ -161,9 +165,9 @@ func NewClient(conf *ClientConfig, opt ...grpc.DialOption) *Client {
 	if err := c.SetConfig(conf); err != nil {
 		panic(err)
 	}
-	c.UseOpt(grpc.WithBalancerName(p2c.Name))
+	c.UseOpt(grpc.WithBalancerName(wrr.Name))
 	c.UseOpt(opt...)
-	c.Use(c.recovery(), clientLogging(), c.handle())
+	c.Use(c.recovery(), clientLogging(), c.handle(), wrr.Stats())
 	return c
 }
 

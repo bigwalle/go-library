@@ -46,6 +46,9 @@ type Codes interface {
 	Message() string
 	//Detail get error detail,it may be nil.
 	Details() []interface{}
+	// Equal for compatible.
+	// Deprecated: please use ecode.EqualError.
+	Equal(error) bool
 }
 
 // A Code is an int error code spec.

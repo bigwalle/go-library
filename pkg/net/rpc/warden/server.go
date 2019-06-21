@@ -10,15 +10,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/dsn"
-	"github.com/welcome112s/go-library/pkg/log"
-	nmd "github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/trace"
-	xtime "github.com/welcome112s/go-library/pkg/time"
-
+	"go-library/pkg/conf/dsn"
+	"go-library/pkg/log"
+	nmd "go-library/pkg/net/metadata"
+	"go-library/pkg/net/trace"
+	xtime "go-library/pkg/time"
 	//this package is for json format response
-	_ "github.com/welcome112s/go-library/pkg/net/rpc/warden/internal/encoding/json"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden/internal/status"
+	_ "go-library/pkg/net/rpc/warden/encoding/json"
+	"go-library/pkg/net/rpc/warden/status"
 
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
@@ -26,6 +25,11 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/peer"
 	"google.golang.org/grpc/reflection"
+)
+
+const (
+	_family = "grpc"
+	_noUser = "no_user"
 )
 
 var (
@@ -80,8 +84,12 @@ type Server struct {
 func (s *Server) handle() grpc.UnaryServerInterceptor {
 	return func(ctx context.Context, req interface{}, args *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp interface{}, err error) {
 		var (
-			cancel func()
-			addr   string
+			cancel     func()
+			caller     string
+			addr       string
+			color      string
+			remote     string
+			remotePort string
 		)
 		s.mutex.RLock()
 		conf := s.conf
@@ -104,12 +112,19 @@ func (s *Server) handle() grpc.UnaryServerInterceptor {
 
 		// get grpc metadata(trace & remote_ip & color)
 		var t trace.Trace
-		cmd := nmd.MD{}
 		if gmd, ok := metadata.FromIncomingContext(ctx); ok {
-			for key, vals := range gmd {
-				if nmd.IsIncomingKey(key) {
-					cmd[key] = vals[0]
-				}
+			t, _ = trace.Extract(trace.GRPCFormat, gmd)
+			if strs, ok := gmd[nmd.Color]; ok {
+				color = strs[0]
+			}
+			if strs, ok := gmd[nmd.RemoteIP]; ok {
+				remote = strs[0]
+			}
+			if callers, ok := gmd[nmd.Caller]; ok {
+				caller = callers[0]
+			}
+			if remotePorts, ok := gmd[nmd.RemotePort]; ok {
+				remotePort = remotePorts[0]
 			}
 		}
 		if t == nil {
@@ -125,10 +140,19 @@ func (s *Server) handle() grpc.UnaryServerInterceptor {
 		defer t.Finish(&err)
 
 		// use common meta data context instead of grpc context
-		ctx = nmd.NewContext(ctx, cmd)
-		ctx = trace.NewContext(ctx, t)
+		ctx = nmd.NewContext(ctx, nmd.MD{
+			nmd.Trace:      t,
+			nmd.Color:      color,
+			nmd.RemoteIP:   remote,
+			nmd.Caller:     caller,
+			nmd.RemotePort: remotePort,
+		})
 
 		resp, err = handler(ctx, req)
+		// monitor & logging
+		if caller == "" {
+			caller = _noUser
+		}
 		return resp, status.FromError(err).Err()
 	}
 }
@@ -165,6 +189,8 @@ func NewServer(conf *ServerConfig, opt ...grpc.ServerOption) (s *Server) {
 			fmt.Fprint(os.Stderr, "[warden] please call flag.Parse() before Init warden server, some configure may not effect\n")
 		}
 		conf = parseDSN(_grpcDSN)
+	} else {
+		fmt.Fprintf(os.Stderr, "[warden] config is Deprecated, argument will be ignored. please use -grpc flag or GRPC env to configure warden server.\n")
 	}
 	s = new(Server)
 	if err := s.SetConfig(conf); err != nil {
@@ -298,8 +324,6 @@ func (s *Server) Start() (*Server, error) {
 		return nil, err
 	}
 	reflection.Register(s.server)
-
-	log.Info("warden: start grpc listen addr: %s", s.conf.Addr)
 	go func() {
 		if err := s.Serve(lis); err != nil {
 			panic(err)

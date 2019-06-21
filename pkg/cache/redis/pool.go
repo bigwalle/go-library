@@ -25,9 +25,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/container/pool"
-	"github.com/welcome112s/go-library/pkg/net/trace"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/container/pool"
+	"go-library/pkg/net/trace"
+	xtime "go-library/pkg/time"
 )
 
 var beginTime, _ = time.Parse("2006-01-02 15:04:05", "2006-01-02 15:04:05")
@@ -168,6 +168,14 @@ func (pc *pooledConnection) Close() error {
 
 func (pc *pooledConnection) Err() error {
 	return pc.c.Err()
+}
+
+func key(args interface{}) (key string) {
+	keys, _ := args.([]interface{})
+	if len(keys) > 0 {
+		key, _ = keys[0].(string)
+	}
+	return
 }
 
 func (pc *pooledConnection) Do(commandName string, args ...interface{}) (reply interface{}, err error) {

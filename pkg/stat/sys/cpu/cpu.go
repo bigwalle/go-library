@@ -2,6 +2,7 @@ package cpu
 
 import (
 	"fmt"
+	"go-library/pkg/log"
 	"sync/atomic"
 	"time"
 )
@@ -68,10 +69,12 @@ func init() {
 func refreshCPU() (u uint64) {
 	total, err := totalCPUUsage()
 	if err != nil {
+		log.Warn("os/stat: get totalCPUUsage failed,error(%v)", err)
 		return
 	}
 	system, err := systemCPUUsage()
 	if err != nil {
+		log.Warn("os/stat: get systemCPUUsage failed,error(%v)", err)
 		return
 	}
 	if system != preSystem {

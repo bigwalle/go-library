@@ -4,10 +4,8 @@ import (
 	"context"
 	"strconv"
 	"strings"
-	"time"
 
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/trace"
+	"go-library/pkg/net/trace"
 )
 
 const (
@@ -15,7 +13,6 @@ const (
 	_traceSpanKind      = "client"
 	_traceComponentName = "library/cache/memcache"
 	_tracePeerService   = "memcache"
-	_slowLogDuration    = time.Millisecond * 250
 )
 
 type traceConn struct {
@@ -25,7 +22,6 @@ type traceConn struct {
 }
 
 func (t *traceConn) setTrace(action, statement string) func(error) error {
-	now := time.Now()
 	parent, ok := trace.FromContext(t.ctx)
 	if !ok {
 		return func(err error) error { return err }
@@ -40,10 +36,6 @@ func (t *traceConn) setTrace(action, statement string) func(error) error {
 	)
 	return func(err error) error {
 		span.Finish(&err)
-		t := time.Since(now)
-		if t > _slowLogDuration {
-			log.Warn("%s slow log action: %s key: %s time: %v", _traceFamily, action, statement, t)
-		}
 		return err
 	}
 }

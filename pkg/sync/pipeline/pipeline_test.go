@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/net/metadata"
+	xtime "go-library/pkg/time"
 )
 
 func TestPipeline(t *testing.T) {
@@ -19,14 +19,14 @@ func TestPipeline(t *testing.T) {
 		Worker:   10,
 	}
 	type recv struct {
-		mirror string
+		mirror bool
 		ch     int
 		values map[string][]interface{}
 	}
 	var runs []recv
 	do := func(c context.Context, ch int, values map[string][]interface{}) {
 		runs = append(runs, recv{
-			mirror: metadata.String(c, metadata.Mirror),
+			mirror: metadata.Bool(c, metadata.Mirror),
 			values: values,
 			ch:     ch,
 		})
@@ -44,7 +44,7 @@ func TestPipeline(t *testing.T) {
 	p.Add(context.Background(), "11", 3)
 	p.Add(context.Background(), "2", 3)
 	time.Sleep(time.Millisecond * 60)
-	mirrorCtx := metadata.NewContext(context.Background(), metadata.MD{metadata.Mirror: "1"})
+	mirrorCtx := metadata.NewContext(context.Background(), metadata.MD{metadata.Mirror: true})
 	p.Add(mirrorCtx, "2", 3)
 	time.Sleep(time.Millisecond * 60)
 	p.SyncAdd(mirrorCtx, "5", 5)
@@ -52,7 +52,7 @@ func TestPipeline(t *testing.T) {
 	p.Close()
 	expt := []recv{
 		{
-			mirror: "",
+			mirror: false,
 			ch:     1,
 			values: map[string][]interface{}{
 				"1":  {1, 2},
@@ -60,21 +60,21 @@ func TestPipeline(t *testing.T) {
 			},
 		},
 		{
-			mirror: "",
+			mirror: false,
 			ch:     2,
 			values: map[string][]interface{}{
 				"2": {3},
 			},
 		},
 		{
-			mirror: "1",
+			mirror: true,
 			ch:     2,
 			values: map[string][]interface{}{
 				"2": {3},
 			},
 		},
 		{
-			mirror: "1",
+			mirror: true,
 			ch:     5,
 			values: map[string][]interface{}{
 				"5": {5},

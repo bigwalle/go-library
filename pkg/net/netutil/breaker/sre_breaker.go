@@ -6,14 +6,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/stat/metric"
+	"go-library/pkg/ecode"
+	"go-library/pkg/log"
+	"go-library/pkg/stat/summary"
 )
 
 // sreBreaker is a sre CircuitBreaker pattern.
 type sreBreaker struct {
-	stat metric.RollingCounter
+	stat summary.Summary
 
 	k       float64
 	request int64
@@ -23,13 +23,8 @@ type sreBreaker struct {
 }
 
 func newSRE(c *Config) Breaker {
-	counterOpts := metric.RollingCounterOpts{
-		Size:           c.Bucket,
-		BucketDuration: time.Duration(int64(c.Window) / int64(c.Bucket)),
-	}
-	stat := metric.NewRollingCounter(counterOpts)
 	return &sreBreaker{
-		stat: stat,
+		stat: summary.New(time.Duration(c.Window), c.Bucket),
 		r:    rand.New(rand.NewSource(time.Now().UnixNano())),
 
 		request: c.Request,
@@ -38,22 +33,8 @@ func newSRE(c *Config) Breaker {
 	}
 }
 
-func (b *sreBreaker) summary() (success int64, total int64) {
-	b.stat.Reduce(func(iterator metric.Iterator) float64 {
-		for iterator.Next() {
-			bucket := iterator.Bucket()
-			total += bucket.Count
-			for _, p := range bucket.Points {
-				success += int64(p)
-			}
-		}
-		return 0
-	})
-	return
-}
-
 func (b *sreBreaker) Allow() error {
-	success, total := b.summary()
+	success, total := b.stat.Value()
 	k := b.k * float64(success)
 	if log.V(5) {
 		log.Info("breaker: request: %d, succee: %d, fail: %d", total, success, total-success)

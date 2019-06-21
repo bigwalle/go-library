@@ -53,6 +53,24 @@ func TestEnv(t *testing.T) {
 			&AppID,
 		},
 		{
+			"http.port",
+			"DISCOVERY_HTTP_PORT",
+			_httpPort,
+			&HTTPPort,
+		},
+		{
+			"gorpc.port",
+			"DISCOVERY_GORPC_PORT",
+			_gorpcPort,
+			&GORPCPort,
+		},
+		{
+			"grpc.port",
+			"DISCOVERY_GRPC_PORT",
+			_grpcPort,
+			&GRPCPort,
+		},
+		{
 			"deploy.color",
 			"DEPLOY_COLOR",
 			"",

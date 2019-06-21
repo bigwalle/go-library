@@ -1,15 +1,4 @@
 ### net/rpc/warden
-##### Version 1.1.12
-1. 设置 caller 为 no_user 如果 user 不存在
-
-##### Version 1.1.12
-1. warden支持mirror传递
-
-##### Version 1.1.11
-1. Validate RequestErr支持详细报错信息
-
-##### Version 1.1.10
-1. 默认读取环境中的color
 
 ##### Version 1.1.9
 1. 增加NonBlock模式

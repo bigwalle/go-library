@@ -1,20 +1,16 @@
 package prom
 
 import (
-	"flag"
-	"os"
-	"sync"
-
 	"github.com/prometheus/client_golang/prometheus"
 )
 
 var (
 	// LibClient for mc redis and db client.
-	LibClient = New().WithTimer("go_lib_client", []string{"method"}).WithCounter("go_lib_client_code", []string{"method", "code"})
+	LibClient = New().WithTimer("go_lib_client", []string{"method"}).WithState("go_lib_client_state", []string{"method", "name"}).WithCounter("go_lib_client_code", []string{"method", "code"})
 	// RPCClient rpc client
-	RPCClient = New().WithTimer("go_rpc_client", []string{"method"}).WithCounter("go_rpc_client_code", []string{"method", "code"})
+	RPCClient = New().WithTimer("go_rpc_client", []string{"method"}).WithState("go_rpc_client_state", []string{"method", "name"}).WithCounter("go_rpc_client_code", []string{"method", "code"})
 	// HTTPClient http client
-	HTTPClient = New().WithTimer("go_http_client", []string{"method"}).WithCounter("go_http_client_code", []string{"method", "code"})
+	HTTPClient = New().WithTimer("go_http_client", []string{"method"}).WithState("go_http_client_state", []string{"method", "name"}).WithCounter("go_http_client_code", []string{"method", "code"})
 	// HTTPServer for http server
 	HTTPServer = New().WithTimer("go_http_server", []string{"user", "method"}).WithCounter("go_http_server_code", []string{"user", "method", "code"})
 	// RPCServer for rpc server
@@ -27,18 +23,13 @@ var (
 	CacheHit = New().WithCounter("go_cache_hit", []string{"name"})
 	// CacheMiss for cache miss
 	CacheMiss = New().WithCounter("go_cache_miss", []string{"name"})
-
-	// UseSummary use summary for Objectives that defines the quantile rank estimates.
-	_useSummary bool
 )
 
 // Prom struct info
 type Prom struct {
-	histogram *prometheus.HistogramVec
-	summary   *prometheus.SummaryVec
-	counter   *prometheus.GaugeVec
-	state     *prometheus.GaugeVec
-	once      sync.Once
+	timer   *prometheus.HistogramVec
+	counter *prometheus.CounterVec
+	state   *prometheus.GaugeVec
 }
 
 // New creates a Prom instance.
@@ -46,38 +37,17 @@ func New() *Prom {
 	return &Prom{}
 }
 
-func init() {
-	addFlag(flag.CommandLine)
-}
-
-func addFlag(fs *flag.FlagSet) {
-	v := os.Getenv("PROM_SUMMARY")
-	if v == "true" {
-		_useSummary = true
-	}
-	fs.BoolVar(&_useSummary, "prom_summary", _useSummary, "use summary in prometheus")
-}
-
 // WithTimer with summary timer
 func (p *Prom) WithTimer(name string, labels []string) *Prom {
-	if p == nil {
+	if p == nil || p.timer != nil {
 		return p
 	}
-	if p.histogram == nil {
-		p.histogram = prometheus.NewHistogramVec(
-			prometheus.HistogramOpts{
-				Name: name,
-				Help: name,
-			}, labels)
-	}
-	if p.summary == nil {
-		p.summary = prometheus.NewSummaryVec(
-			prometheus.SummaryOpts{
-				Name:       name,
-				Help:       name,
-				Objectives: map[float64]float64{0.99: 0.001, 0.9: 0.01},
-			}, labels)
-	}
+	p.timer = prometheus.NewHistogramVec(
+		prometheus.HistogramOpts{
+			Name: name,
+			Help: name,
+		}, labels)
+	prometheus.MustRegister(p.timer)
 	return p
 }
 
@@ -86,8 +56,8 @@ func (p *Prom) WithCounter(name string, labels []string) *Prom {
 	if p == nil || p.counter != nil {
 		return p
 	}
-	p.counter = prometheus.NewGaugeVec(
-		prometheus.GaugeOpts{
+	p.counter = prometheus.NewCounterVec(
+		prometheus.CounterOpts{
 			Name: name,
 			Help: name,
 		}, labels)
@@ -111,22 +81,9 @@ func (p *Prom) WithState(name string, labels []string) *Prom {
 
 // Timing log timing information (in milliseconds) without sampling
 func (p *Prom) Timing(name string, time int64, extra ...string) {
-	p.once.Do(func() {
-		if _useSummary && p.summary != nil {
-			prometheus.MustRegister(p.summary)
-			return
-		}
-		if !_useSummary && p.histogram != nil {
-			prometheus.MustRegister(p.histogram)
-		}
-	})
 	label := append([]string{name}, extra...)
-	if _useSummary && p.summary != nil {
-		p.summary.WithLabelValues(label...).Observe(float64(time))
-		return
-	}
-	if !_useSummary && p.histogram != nil {
-		p.histogram.WithLabelValues(label...).Observe(float64(time))
+	if p.timer != nil {
+		p.timer.WithLabelValues(label...).Observe(float64(time))
 	}
 }
 
@@ -136,13 +93,16 @@ func (p *Prom) Incr(name string, extra ...string) {
 	if p.counter != nil {
 		p.counter.WithLabelValues(label...).Inc()
 	}
+	if p.state != nil {
+		p.state.WithLabelValues(label...).Inc()
+	}
 }
 
 // Decr decrements one stat counter without sampling
 func (p *Prom) Decr(name string, extra ...string) {
-	if p.counter != nil {
+	if p.state != nil {
 		label := append([]string{name}, extra...)
-		p.counter.WithLabelValues(label...).Dec()
+		p.state.WithLabelValues(label...).Dec()
 	}
 }
 
@@ -159,5 +119,8 @@ func (p *Prom) Add(name string, v int64, extra ...string) {
 	label := append([]string{name}, extra...)
 	if p.counter != nil {
 		p.counter.WithLabelValues(label...).Add(float64(v))
+	}
+	if p.state != nil {
+		p.state.WithLabelValues(label...).Add(float64(v))
 	}
 }

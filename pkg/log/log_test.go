@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"go-library/pkg/net/metadata"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -25,6 +25,19 @@ func initFile() {
 	Init(conf)
 }
 
+func initAgent() {
+	conf := &Config{
+		Agent: &AgentConfig{
+			TaskID: "000003",
+			Addr:   "172.16.0.204:514",
+			Proto:  "tcp",
+			Chan:   1024,
+			Buffer: 10,
+		},
+	}
+	Init(conf)
+}
+
 type TestLog struct {
 	A string
 	B int
@@ -36,21 +49,21 @@ func testLog(t *testing.T) {
 	t.Run("Error", func(t *testing.T) {
 		Error("hello %s", "world")
 		Errorv(context.Background(), KV("key", 2222222), KV("test2", "test"))
-		Errorc(context.Background(), "keys: %s %s...", "key1", "key2")
-		Errorw(context.Background(), "key1", "value1", "key2", "value2")
 	})
 	t.Run("Warn", func(t *testing.T) {
 		Warn("hello %s", "world")
 		Warnv(context.Background(), KV("key", 2222222), KV("test2", "test"))
-		Warnc(context.Background(), "keys: %s %s...", "key1", "key2")
-		Warnw(context.Background(), "key1", "value1", "key2", "value2")
 	})
 	t.Run("Info", func(t *testing.T) {
 		Info("hello %s", "world")
 		Infov(context.Background(), KV("key", 2222222), KV("test2", "test"))
-		Infoc(context.Background(), "keys: %s %s...", "key1", "key2")
-		Infow(context.Background(), "key1", "value1", "key2", "value2")
 	})
+}
+
+func TestLogAgent(t *testing.T) {
+	initAgent()
+	testLog(t)
+	assert.Equal(t, nil, Close())
 }
 
 func TestFile(t *testing.T) {

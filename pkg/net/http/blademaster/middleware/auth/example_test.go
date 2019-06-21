@@ -3,38 +3,43 @@ package auth_test
 import (
 	"fmt"
 
-	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/auth"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	bm "go-library/pkg/net/http/blademaster"
+	"go-library/pkg/net/http/blademaster/middleware/auth"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/net/rpc/warden"
 )
 
 // This example create a identify middleware instance and attach to several path,
 // it will validate request by specified policy and put extra information into context. e.g., `mid`.
 // It provides additional handler functions to provide the identification for your business handler.
 func Example() {
-	myHandler := func(ctx *bm.Context) {
-		mid := metadata.Int64(ctx, metadata.Mid)
-		ctx.JSON(fmt.Sprintf("%d", mid), nil)
-	}
-
 	authn := auth.New(&auth.Config{
+		Identify:    &warden.ClientConfig{},
 		DisableCSRF: false,
 	})
 
 	e := bm.DefaultServer(nil)
 
 	// mark `/user` path as User policy
-	e.GET("/user", authn.User, myHandler)
+	e.GET("/user", authn.User, func(ctx *bm.Context) {
+		mid := metadata.Int64(ctx, metadata.Mid)
+		ctx.JSON(fmt.Sprintf("%d", mid), nil)
+	})
 	// mark `/mobile` path as UserMobile policy
-	e.GET("/mobile", authn.UserMobile, myHandler)
+	e.GET("/mobile", authn.UserMobile, func(ctx *bm.Context) {
+		mid := metadata.Int64(ctx, metadata.Mid)
+		ctx.JSON(fmt.Sprintf("%d", mid), nil)
+	})
 	// mark `/web` path as UserWeb policy
-	e.GET("/web", authn.UserWeb, myHandler)
+	e.GET("/web", authn.UserWeb, func(ctx *bm.Context) {
+		mid := metadata.Int64(ctx, metadata.Mid)
+		ctx.JSON(fmt.Sprintf("%d", mid), nil)
+	})
 	// mark `/guest` path as Guest policy
-	e.GET("/guest", authn.Guest, myHandler)
+	e.GET("/guest", authn.Guest, func(ctx *bm.Context) {
+		mid := metadata.Int64(ctx, metadata.Mid)
+		ctx.JSON(fmt.Sprintf("%d", mid), nil)
+	})
 
-	o := e.Group("/owner", authn.User)
-	o.GET("/info", myHandler)
-	o.POST("/modify", myHandler)
-
-	e.Start()
+	e.Run(":18080")
 }

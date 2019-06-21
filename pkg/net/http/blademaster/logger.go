@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"go-library/pkg/ecode"
+	"go-library/pkg/log"
+	"go-library/pkg/net/metadata"
 )
 
 // Logger is logger  middleware
@@ -26,6 +26,7 @@ func Logger() HandlerFunc {
 
 		c.Next()
 
+		mid, _ := c.Get("mid")
 		err := c.Error
 		cerr := ecode.Cause(err)
 		dt := time.Since(now)
@@ -52,18 +53,19 @@ func Logger() HandlerFunc {
 			}
 		}
 		lf(c,
-			log.KVString("method", req.Method),
-			log.KVString("ip", ip),
-			log.KVString("user", caller),
-			log.KVString("path", path),
-			log.KVString("params", params.Encode()),
-			log.KVInt("ret", cerr.Code()),
-			log.KVString("msg", cerr.Message()),
-			log.KVString("stack", fmt.Sprintf("%+v", err)),
-			log.KVString("err", errmsg),
-			log.KVFloat64("timeout_quota", quota),
-			log.KVFloat64("ts", dt.Seconds()),
-			log.KVString("source", "http-access-log"),
+			log.KV("method", req.Method),
+			log.KV("mid", mid),
+			log.KV("ip", ip),
+			log.KV("user", caller),
+			log.KV("path", path),
+			log.KV("params", params.Encode()),
+			log.KV("ret", cerr.Code()),
+			log.KV("msg", cerr.Message()),
+			log.KV("stack", fmt.Sprintf("%+v", err)),
+			log.KV("err", errmsg),
+			log.KV("timeout_quota", quota),
+			log.KV("ts", dt.Seconds()),
+			log.KV("source", "http-access-log"),
 		)
 	}
 }

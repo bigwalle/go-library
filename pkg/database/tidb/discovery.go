@@ -6,24 +6,24 @@ import (
 	"strings"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/naming/discovery"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/log"
+	"go-library/pkg/naming"
+	"go-library/pkg/naming/discovery"
 )
 
 var _schema = "tidb://"
 
 func (db *DB) nodeList() (nodes []string) {
 	var (
-		insZone *naming.InstancesInfo
-		ins     []*naming.Instance
-		ok      bool
+		insMap map[string][]*naming.Instance
+		ins    []*naming.Instance
+		ok     bool
 	)
-	if insZone, ok = db.dis.Fetch(context.Background()); !ok {
+	if insMap, ok = db.dis.Fetch(context.Background()); !ok {
 		return
 	}
-	if ins, ok = insZone.Instances[env.Zone]; !ok || len(ins) == 0 {
+	if ins, ok = insMap[env.Zone]; !ok || len(ins) == 0 {
 		return
 	}
 	for _, in := range ins {

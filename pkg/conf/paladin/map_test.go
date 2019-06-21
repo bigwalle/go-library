@@ -3,9 +3,9 @@ package paladin_test
 import (
 	"testing"
 
-	"github.com/welcome112s/go-library/pkg/conf/paladin"
+	"go-library/pkg/conf/paladin"
 
-	"github.com/BurntSushi/toml"
+	"github.com/naoina/toml"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -75,10 +75,10 @@ func TestMap(t *testing.T) {
 	var sliceStr []string
 	err = m.Get("strings").Slice(&sliceStr)
 	assert.Nil(t, err)
-	assert.Equal(t, []string{"a", "b", "c"}, sliceStr)
+	assert.Equal(t, sliceStr, []string{"a", "b", "c"})
 	err = m.Get("strings").Slice(&sliceStr)
 	assert.Nil(t, err)
-	assert.Equal(t, []string{"a", "b", "c"}, sliceStr)
+	assert.Equal(t, sliceStr, []string{"a", "b", "c"})
 	// errors
 	err = m.Get("strings").Slice(sliceInt)
 	assert.NotNil(t, err)

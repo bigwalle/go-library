@@ -3,18 +3,16 @@ package trace
 import (
 	"log"
 	"os"
+	"strconv"
 	"sync"
 	"time"
 )
 
-const (
-	_maxLevel    = 64
-	_probability = 0.00025
-)
+const _maxLevel = 64
 
 func newTracer(serviceName string, report reporter, cfg *Config) Tracer {
 	// hard code reset probability at 0.00025, 1/4000
-	cfg.Probability = _probability
+	cfg.Probability = 0.00025
 	sampler := newSampler(cfg.Probability)
 
 	// default internal tags
@@ -148,11 +146,34 @@ func (d *dapper) extract(format interface{}, carrier interface{}) (Trace, error)
 			return nil, err
 		}
 	}
-	pctx, err := contextFromString(carr.Get(KratosTraceID))
+	contextStr := carr.Get(BiliTraceID)
+	if contextStr == "" {
+		return d.legacyExtract(carr)
+	}
+	pctx, err := contextFromString(contextStr)
 	if err != nil {
 		return nil, err
 	}
 	// NOTE: call SetTitle after extract trace
+	return d.newSpanWithContext("", pctx), nil
+}
+
+func (d *dapper) legacyExtract(carr Carrier) (Trace, error) {
+	traceIDstr := carr.Get(KeyTraceID)
+	if traceIDstr == "" {
+		return nil, ErrTraceNotFound
+	}
+	traceID, err := strconv.ParseUint(traceIDstr, 10, 64)
+	if err != nil {
+		return nil, ErrTraceCorrupted
+	}
+	sampled, _ := strconv.ParseBool(carr.Get(KeyTraceSampled))
+	spanID, _ := strconv.ParseUint(carr.Get(KeyTraceSpanID), 10, 64)
+	parentID, _ := strconv.ParseUint(carr.Get(KeyTraceSpanID), 10, 64)
+	pctx := spanContext{traceID: traceID, spanID: spanID, parentID: parentID}
+	if sampled {
+		pctx.flags = flagSampled
+	}
 	return d.newSpanWithContext("", pctx), nil
 }
 

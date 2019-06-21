@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/net/metadata"
+	xtime "go-library/pkg/time"
 )
 
 // ErrFull channel full error
@@ -113,7 +113,7 @@ func (p *Pipeline) Add(c context.Context, key string, value interface{}) (err er
 
 func (p *Pipeline) add(c context.Context, key string, value interface{}) (ch chan *message, m *message) {
 	shard := p.Split(key) % p.config.Worker
-	if metadata.String(c, metadata.Mirror) != "" {
+	if metadata.Bool(c, metadata.Mirror) {
 		ch = p.mirrorChans[shard]
 	} else {
 		ch = p.chans[shard]
@@ -171,7 +171,7 @@ func (p *Pipeline) mergeproc(mirror bool, index int, ch <-chan *message) {
 		if len(vals) > 0 {
 			ctx := context.Background()
 			if mirror {
-				ctx = metadata.NewContext(ctx, metadata.MD{metadata.Mirror: "1"})
+				ctx = metadata.NewContext(ctx, metadata.MD{metadata.Mirror: true})
 			}
 			p.Do(ctx, index, vals)
 			vals = make(map[string][]interface{}, p.config.MaxSize)

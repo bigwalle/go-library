@@ -38,13 +38,19 @@ func (v *Value) Bool() (bool, error) {
 // Int return int value.
 func (v *Value) Int() (int, error) {
 	i, err := v.Int64()
-	return int(i), err
+	if err != nil {
+		return 0, nil
+	}
+	return int(i), nil
 }
 
 // Int32 return int32 value.
 func (v *Value) Int32() (int32, error) {
 	i, err := v.Int64()
-	return int32(i), err
+	if err != nil {
+		return 0, nil
+	}
+	return int32(i), nil
 }
 
 // Int64 return int64 value.
@@ -110,7 +116,7 @@ func (v *Value) Raw() (string, error) {
 	return v.raw, nil
 }
 
-// Slice scan a slcie interface, if slice has element it will be discard.
+// Slice scan a slcie interface.
 func (v *Value) Slice(dst interface{}) error {
 	// NOTE: val is []interface{}, slice is []type
 	if v.val == nil {
@@ -121,20 +127,27 @@ func (v *Value) Slice(dst interface{}) error {
 		return ErrDifferentTypes
 	}
 	el := rv.Elem()
-	// reset slice len to 0.
-	el.SetLen(0)
 	kind := el.Type().Elem().Kind()
-	src, ok := v.val.([]interface{})
-	if !ok {
-		return ErrDifferentTypes
-	}
-	for _, s := range src {
-		if reflect.TypeOf(s).Kind() != kind {
-			return ErrTypeAssertion
+	if v.slice == nil {
+		src, ok := v.val.([]interface{})
+		if !ok {
+			return ErrDifferentTypes
 		}
-		el = reflect.Append(el, reflect.ValueOf(s))
+		for _, s := range src {
+			if reflect.TypeOf(s).Kind() != kind {
+				return ErrTypeAssertion
+			}
+			el = reflect.Append(el, reflect.ValueOf(s))
+		}
+		v.slice = el.Interface()
+		rv.Elem().Set(el)
+		return nil
 	}
-	rv.Elem().Set(el)
+	sv := reflect.ValueOf(v.slice)
+	if sv.Type().Elem().Kind() != kind {
+		return ErrTypeAssertion
+	}
+	rv.Elem().Set(sv)
 	return nil
 }
 

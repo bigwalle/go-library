@@ -3,17 +3,14 @@ package redis
 import (
 	"context"
 	"fmt"
-	"time"
 
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/trace"
+	"go-library/pkg/net/trace"
 )
 
 const (
-	_traceComponentName = "pkg/cache/redis"
+	_traceComponentName = "library/cache/redis"
 	_tracePeerService   = "redis"
 	_traceSpanKind      = "client"
-	_slowLogDuration    = time.Millisecond * 250
 )
 
 var _internalTags = []trace.Tag{
@@ -35,8 +32,6 @@ type traceConn struct {
 }
 
 func (t *traceConn) Do(commandName string, args ...interface{}) (reply interface{}, err error) {
-	statement := getStatement(commandName, args...)
-	defer slowLog(statement, time.Now())
 	root, ok := trace.FromContext(t.ctx)
 	// NOTE: ignored empty commandName
 	// current sdk will Do empty command after pipeline finished
@@ -46,6 +41,10 @@ func (t *traceConn) Do(commandName string, args ...interface{}) (reply interface
 	tr := root.Fork("", "Redis:"+commandName)
 	tr.SetTag(_internalTags...)
 	tr.SetTag(t.connTags...)
+	statement := commandName
+	if len(args) > 0 {
+		statement += fmt.Sprintf(" %v", args[0])
+	}
 	tr.SetTag(trace.TagString(trace.TagDBStatement, statement))
 	reply, err = t.Conn.Do(commandName, args...)
 	tr.Finish(&err)
@@ -53,8 +52,6 @@ func (t *traceConn) Do(commandName string, args ...interface{}) (reply interface
 }
 
 func (t *traceConn) Send(commandName string, args ...interface{}) error {
-	statement := getStatement(commandName, args...)
-	defer slowLog(statement, time.Now())
 	t.pending++
 	root, ok := trace.FromContext(t.ctx)
 	if !ok {
@@ -64,6 +61,11 @@ func (t *traceConn) Send(commandName string, args ...interface{}) error {
 		t.tr = root.Fork("", "Redis:Pipeline")
 		t.tr.SetTag(_internalTags...)
 		t.tr.SetTag(t.connTags...)
+	}
+
+	statement := commandName
+	if len(args) > 0 {
+		statement += fmt.Sprintf(" %v", args[0])
 	}
 	t.tr.SetLog(
 		trace.Log(trace.LogEvent, "Send"),
@@ -81,7 +83,6 @@ func (t *traceConn) Send(commandName string, args ...interface{}) error {
 }
 
 func (t *traceConn) Flush() error {
-	defer slowLog("Flush", time.Now())
 	if t.tr == nil {
 		return t.Conn.Flush()
 	}
@@ -98,7 +99,6 @@ func (t *traceConn) Flush() error {
 }
 
 func (t *traceConn) Receive() (reply interface{}, err error) {
-	defer slowLog("Receive", time.Now())
 	if t.tr == nil {
 		return t.Conn.Receive()
 	}
@@ -124,19 +124,4 @@ func (t *traceConn) Receive() (reply interface{}, err error) {
 func (t *traceConn) WithContext(ctx context.Context) Conn {
 	t.ctx = ctx
 	return t
-}
-
-func slowLog(statement string, now time.Time) {
-	du := time.Since(now)
-	if du > _slowLogDuration {
-		log.Warn("%s slow log statement: %s time: %v", _tracePeerService, statement, du)
-	}
-}
-
-func getStatement(commandName string, args ...interface{}) (res string) {
-	res = commandName
-	if len(args) > 0 {
-		res = fmt.Sprintf("%s %v", commandName, args[0])
-	}
-	return
 }

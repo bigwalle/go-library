@@ -1,7 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66b32370-1ea5-46ab-b786-c6da8c923481" name="Default Changelist" comment="" />
+    <list default="true" id="66b32370-1ea5-46ab-b786-c6da8c923481" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/memcache/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/memcache/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/memcache/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/memcache/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/memcache/pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/memcache/pool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/memcache/trace.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/memcache/trace.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/redis/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/redis/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/redis/conn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/redis/pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/redis/pool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/cache/redis/trace.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cache/redis/trace.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/dsn/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/dsn/dsn.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/dsn/dsn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/dsn/dsn_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/dsn/dsn_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/dsn/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/dsn/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/dsn/query_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/dsn/query_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/env/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/env/env.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/env/env.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/env/env_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/env/env_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/default.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/default.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/file_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/file_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/helper_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/map.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/map.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/map_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/map_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/mock.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/mock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/mock_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/mock_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/toml.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/toml.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/conf/paladin/value.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/conf/paladin/value.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/group/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/group/example_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/group/group.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/group/group_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/pool/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/container/pool/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/pool/list_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/container/pool/list_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/pool/pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/container/pool/pool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/pool/slice_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/container/pool/slice_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/queue/aqm/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/queue/aqm/codel.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/container/queue/aqm/codel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/container/queue/aqm/codel_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/container/queue/aqm/codel_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/hbase/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/hbase/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/hbase/hbase.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/hbase/metrics.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/hbase/slowlog.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/hbase/trace.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/sql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/sql/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/sql/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/sql/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/sql/sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/sql/sql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/tidb/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/tidb/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/tidb/discovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/tidb/discovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/tidb/node_proc.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/tidb/node_proc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/tidb/sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/tidb/sql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/database/tidb/tidb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/database/tidb/tidb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/ecode/common_ecode.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/ecode/common_ecode.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/ecode/ecode.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/ecode/ecode.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/ecode/status.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/ecode/status.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/ecode/status_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/ecode/status_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/ecode/types/status.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/ecode/types/status.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/doc.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/doc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/field.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/buffer.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/buffer_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/bufferpool.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/encoder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/field.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/json_encoder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/pool.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/internal/core/pool_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/log_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/log_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/pattern.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/pattern.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/stdout.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/stdout.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/log/verbose.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/log/verbose.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/naming/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/naming/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/naming/discovery/discovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/naming/discovery/discovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/naming/naming.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/naming/naming.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/context.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/context.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/cors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/csrf.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/csrf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/metadata.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/metadata.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/middleware/auth/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/middleware/auth/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/middleware/auth/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/middleware/auth/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/middleware/auth/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/middleware/auth/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/perf.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/perf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/ratelimit.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/recovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/render/render.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/render/render.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/trace.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/trace.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/http/blademaster/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/http/blademaster/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/ip/ip.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/ip/ip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/metadata/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/metadata/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/metadata/key.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/metadata/key.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/metadata/metadata.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/metadata/metadata.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/metadata/metadata_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/metadata/metadata_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/netutil/breaker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/netutil/breaker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/netutil/breaker/breaker.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/netutil/breaker/breaker.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/netutil/breaker/breaker_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/netutil/breaker/breaker_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/netutil/breaker/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/netutil/breaker/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/netutil/breaker/sre_breaker.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/netutil/breaker/sre_breaker.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/netutil/breaker/sre_breaker_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/netutil/breaker/sre_breaker_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/p2c/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/p2c/p2c.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/p2c/p2c_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/wrr/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/wrr/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/wrr/wrr.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/wrr/wrr.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/wrr/wrr_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/balancer/wrr/wrr_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/exapmle_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/exapmle_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/bench/client/client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/bench/proto/hello.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/bench/proto/hello.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/bench/server/server.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/helloworld/client.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/helloworld/client/greeter_client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/benchmark/helloworld/server/greeter_server.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/encoding/json/json.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/examples/client/client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/examples/grpcDebug/client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/examples/grpcDebug/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/examples/server/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/metadata/metadata.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/pb/ecode.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/pb/ecode.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/pb/ecode.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/proto/testproto/hello.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/proto/testproto/hello.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/status/status.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/internal/status/status_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/logging.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/logging.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/logging_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/logging_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/ratelimiter/ratelimiter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/recovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/recovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/direct/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/direct/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/direct/direct.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/direct/direct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/direct/direct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/direct/direct_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/resolver.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/resolver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/test/mockdiscovery.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/test/mockdiscovery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/test/resovler_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/resolver/test/resovler_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/server_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/stats.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/stats.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/rpc/warden/validate.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/rpc/warden/validate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/const.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/const.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/dapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/dapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/marshal.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/marshal.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/mocktrace/mocktrace.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/mocktrace/mocktrace_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/noop.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/noop.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/propagation.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/propagation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/sample.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/sample.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/span.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/span.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/tracer.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/tracer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/net/trace/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/net/trace/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/counter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/counter_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/gauge.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/gauge_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/iterator.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/metric.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/point_gauge.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/point_gauge_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/point_policy.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/reduce.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/reduce_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/rolling_counter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/rolling_counter_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/rolling_gauge.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/rolling_gauge_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/rolling_policy.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/window.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/metric/window_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/prom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/prom/prometheus.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/stat/prom/prometheus.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/stat.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/stat/stat.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/sys/cpu/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/stat/sys/cpu/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/stat/sys/cpu/cpu.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/stat/sys/cpu/cpu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/errgroup/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/errgroup/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/errgroup/doc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/errgroup/errgroup.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/errgroup/errgroup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/errgroup/errgroup_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/errgroup/errgroup_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/errgroup/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/errgroup/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/pipeline/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/pipeline/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/pipeline/fanout/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/pipeline/fanout/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/pipeline/fanout/fanout.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/pipeline/fanout/fanout.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/pipeline/pipeline.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/pipeline/pipeline.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sync/pipeline/pipeline_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sync/pipeline/pipeline_test.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,26 +213,62 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/conf/BUILD">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pkg/conf/client.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/conf/env/env.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+              <folding>
+                <element signature="e#119#143#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>bilibili/kratos</find>
+      <find>go-common/library</find>
     </findStrings>
     <replaceStrings>
       <replace>welcome112s/go-library</replace>
+      <replace>go-library/pkg</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/conf/dsn</dir>
+      <dir>$PROJECT_DIR$/pkg/cache</dir>
     </dirStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.12/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="577" />
-    <option name="y" value="36" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pkg/conf/client.go" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="728" />
   </component>
@@ -44,6 +284,24 @@
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="env" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -81,16 +339,12 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="105" y="23" width="1280" height="728" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="728" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26465797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.55105346" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -98,19 +352,22 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.55105346" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/net/ip/BUILD">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/net/ip/BUILD" />
     <entry file="file://$PROJECT_DIR$/pkg/naming/discovery/discovery.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -179,16 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go.mod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go.sum">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/log/field.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -249,6 +496,36 @@
           <folding>
             <element signature="e#15#77#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.sum">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/conf/BUILD">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/conf/env/env.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding>
+            <element signature="e#119#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/conf/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -2,9 +2,10 @@ package trace
 
 import (
 	"fmt"
+	"strconv"
 	"time"
 
-	protogen "github.com/welcome112s/go-library/pkg/net/trace/proto"
+	protogen "go-library/pkg/net/trace/proto"
 )
 
 const (
@@ -24,10 +25,6 @@ type span struct {
 	tags          []Tag
 	logs          []*protogen.Log
 	childs        int
-}
-
-func (s *span) TraceID() string {
-	return s.context.String()
 }
 
 func (s *span) Fork(serviceName, operationName string) Trace {
@@ -99,7 +96,14 @@ func (s *span) setLog(logs ...LogField) Trace {
 
 // Visit visits the k-v pair in trace, calling fn for each.
 func (s *span) Visit(fn func(k, v string)) {
-	fn(KratosTraceID, s.context.String())
+	// NOTE: Deprecated key: delete in future
+	fn(KeyTraceID, strconv.FormatUint(s.context.traceID, 10))
+	fn(KeyTraceSpanID, strconv.FormatUint(s.context.spanID, 10))
+	fn(KeyTraceParentID, strconv.FormatUint(s.context.parentID, 10))
+	fn(KeyTraceSampled, strconv.FormatBool(s.context.isSampled()))
+	fn(KeyTraceCaller, s.dapper.serviceName)
+
+	fn(BiliTraceID, s.context.String())
 }
 
 // SetTitle reset trace title

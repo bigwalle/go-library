@@ -1,11 +1,11 @@
-package paladin
+package paladin_test
 
 import (
-	"context"
 	"io/ioutil"
 	"os"
 	"testing"
-	"time"
+
+	"go-library/pkg/conf/paladin"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -21,11 +21,11 @@ func TestNewFile(t *testing.T) {
 		sliceStr = ["1", "2", "3"]
 	`), 0644))
 	// test client
-	cli, err := NewFile(path + "test.toml")
+	cli, err := paladin.NewFile(path + "test.toml")
 	assert.Nil(t, err)
 	assert.NotNil(t, cli)
 	// test map
-	m := Map{}
+	m := paladin.Map{}
 	text, err := cli.Get("test.toml").String()
 	assert.Nil(t, err)
 	assert.Nil(t, m.Set(text), "text")
@@ -50,11 +50,11 @@ func TestNewFilePath(t *testing.T) {
 		number = 100
 	`), 0644))
 	// test client
-	cli, err := NewFile(path)
+	cli, err := paladin.NewFile(path)
 	assert.Nil(t, err)
 	assert.NotNil(t, cli)
 	// test map
-	m := Map{}
+	m := paladin.Map{}
 	text, err := cli.Get("test.toml").String()
 	assert.Nil(t, err)
 	assert.Nil(t, m.Set(text), "text")
@@ -64,34 +64,4 @@ func TestNewFilePath(t *testing.T) {
 	n, err := m.Get("number").Int64()
 	assert.Nil(t, err, s)
 	assert.Equal(t, n, int64(100), "number")
-}
-
-func TestFileEvent(t *testing.T) {
-	// test data
-	path := "/tmp/test_conf_event/"
-	assert.Nil(t, os.MkdirAll(path, 0700))
-	assert.Nil(t, ioutil.WriteFile(path+"test.toml", []byte(`
-		text = "hello"	
-		number = 100
-	`), 0644))
-	assert.Nil(t, ioutil.WriteFile(path+"abc.toml", []byte(`
-		text = "hello"	
-		number = 100
-	`), 0644))
-	// test client
-	cli, err := NewFile(path)
-	assert.Nil(t, err)
-	assert.NotNil(t, cli)
-	time.Sleep(time.Millisecond * 100)
-	ch := cli.WatchEvent(context.Background(), "test.toml", "abc.toml")
-	time.Sleep(time.Millisecond * 100)
-	ioutil.WriteFile(path+"test.toml", []byte(`hello`), 0644)
-	timeout := time.NewTimer(time.Second)
-	select {
-	case <-timeout.C:
-		t.Fatalf("run test timeout")
-	case ev := <-ch:
-		assert.Equal(t, EventUpdate, ev.Event)
-		assert.Equal(t, "hello", ev.Value)
-	}
 }

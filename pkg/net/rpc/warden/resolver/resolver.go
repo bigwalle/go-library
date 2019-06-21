@@ -2,21 +2,19 @@ package resolver
 
 import (
 	"context"
-	"fmt"
 	"math/rand"
 	"net/url"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
 	"sync"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/naming"
-	wmeta "github.com/welcome112s/go-library/pkg/net/rpc/warden/internal/metadata"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/log"
+	"go-library/pkg/naming"
+	wmeta "go-library/pkg/net/rpc/warden/metadata"
 
-	farm "github.com/dgryski/go-farm"
+	"github.com/dgryski/go-farm"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/resolver"
 )
@@ -128,19 +126,17 @@ func (r *Resolver) updateproc() {
 				return
 			}
 		}
-		if ins, ok := r.nr.Fetch(context.Background()); ok {
-			instances, ok := ins.Instances[r.zone]
+		if insMap, ok := r.nr.Fetch(context.Background()); ok {
+			instances, ok := insMap[r.zone]
 			if !ok {
-				for _, value := range ins.Instances {
+				for _, value := range insMap {
 					instances = append(instances, value...)
 				}
 			}
 			if r.subsetSize > 0 && len(instances) > 0 {
 				instances = r.subset(instances, env.Hostname, r.subsetSize)
 			}
-			if len(instances) > 0 {
-				r.newAddress(instances)
-			}
+			r.newAddress(instances)
 		}
 	}
 }
@@ -190,7 +186,6 @@ func (r *Resolver) newAddress(instances []*naming.Instance) {
 			}
 		}
 		if rpc == "" {
-			fmt.Fprintf(os.Stderr, "warden/resolver: app(%s,%s) no valid grpc address(%v) found!", ins.AppID, ins.Hostname, ins.Addrs)
 			log.Warn("warden/resolver: invalid rpc address(%s,%s,%v) found!", ins.AppID, ins.Hostname, ins.Addrs)
 			continue
 		}
@@ -198,7 +193,7 @@ func (r *Resolver) newAddress(instances []*naming.Instance) {
 			Addr:       rpc,
 			Type:       resolver.Backend,
 			ServerName: ins.AppID,
-			Metadata:   wmeta.MD{Weight: uint64(weight), Color: ins.Metadata[naming.MetaColor]},
+			Metadata:   wmeta.MD{Weight: weight, Color: ins.Metadata[naming.MetaColor]},
 		}
 		addrs = append(addrs, addr)
 	}

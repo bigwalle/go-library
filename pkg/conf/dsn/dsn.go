@@ -1,3 +1,5 @@
+// Package dsn provide parse dsn and bind to struct
+// see http://git.bilibili.co/platform/go-common/issues/279
 package dsn
 
 import (
@@ -5,7 +7,7 @@ import (
 	"reflect"
 	"strings"
 
-	validator "gopkg.in/go-playground/validator.v9"
+	"gopkg.in/go-playground/validator.v9"
 )
 
 var _validator *validator.Validate
