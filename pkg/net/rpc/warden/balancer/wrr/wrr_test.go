@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	nmd "go-library/pkg/net/metadata"
-	wmeta "go-library/pkg/net/rpc/warden/metadata"
+	nmd "github.com/welcome112s/go-library/pkg/net/metadata"
+	wmeta "github.com/welcome112s/go-library/pkg/net/rpc/warden/metadata"
 
 	"google.golang.org/grpc/balancer"
 	"google.golang.org/grpc/resolver"

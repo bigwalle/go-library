@@ -16,7 +16,7 @@ go_library(
         "json_encoder.go",
         "pool.go",
     ],
-    importpath = "go-library/pkg/log/internal",
+    importpath = "github.com/welcome112s/go-library/pkg/log/internal",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

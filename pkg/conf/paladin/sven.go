@@ -14,11 +14,11 @@ import (
 	"sync"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/ecode"
-	"go-library/pkg/log"
-	xip "go-library/pkg/net/ip"
-	"go-library/pkg/net/netutil"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	xip "github.com/welcome112s/go-library/pkg/net/ip"
+	"github.com/welcome112s/go-library/pkg/net/netutil"
 
 	"github.com/pkg/errors"
 )

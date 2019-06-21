@@ -22,7 +22,7 @@ filegroup(
 go_library(
     name = "go_default_library",
     srcs = ["syscall.go"],
-    importpath = "go-library/pkg/syscall",
+    importpath = "github.com/welcome112s/go-library/pkg/syscall",
     tags = ["automanaged"],
 )
 

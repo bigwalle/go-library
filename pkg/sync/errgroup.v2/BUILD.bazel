@@ -10,7 +10,7 @@ go_library(
         "doc.go",
         "errgroup.go",
     ],
-    importpath = "go-library/pkg/sync/errgroup.v2",
+    importpath = "github.com/welcome112s/go-library/pkg/sync/errgroup.v2",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

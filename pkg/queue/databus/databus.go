@@ -12,16 +12,16 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go-library/pkg/cache/redis"
-	"go-library/pkg/conf/env"
-	"go-library/pkg/container/pool"
-	"go-library/pkg/log"
-	"go-library/pkg/naming"
-	"go-library/pkg/naming/discovery"
-	"go-library/pkg/net/netutil"
-	"go-library/pkg/net/trace"
-	"go-library/pkg/stat/prom"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/cache/redis"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/container/pool"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/naming/discovery"
+	"github.com/welcome112s/go-library/pkg/net/netutil"
+	"github.com/welcome112s/go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/stat/prom"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 const (

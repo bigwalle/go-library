@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/naming"
-	"go-library/pkg/naming/discovery"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/naming/discovery"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

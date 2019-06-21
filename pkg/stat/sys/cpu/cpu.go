@@ -2,7 +2,7 @@ package cpu
 
 import (
 	"fmt"
-	"go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/log"
 	"sync/atomic"
 	"time"
 )

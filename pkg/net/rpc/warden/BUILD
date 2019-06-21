@@ -44,7 +44,7 @@ go_library(
         "stats.go",
         "validate.go",
     ],
-    importpath = "go-library/pkg/net/rpc/warden",
+    importpath = "github.com/welcome112s/go-library/pkg/net/rpc/warden",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

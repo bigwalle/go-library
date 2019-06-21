@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"go-library/pkg/cache/redis"
-	"go-library/pkg/ecode"
-	"go-library/pkg/log"
-	bm "go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/cache/redis"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
 
 	"github.com/pkg/errors"
 )

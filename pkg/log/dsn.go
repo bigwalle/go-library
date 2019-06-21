@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"go-library/pkg/conf/dsn"
+	"github.com/welcome112s/go-library/pkg/conf/dsn"
 
 	"github.com/pkg/errors"
 )

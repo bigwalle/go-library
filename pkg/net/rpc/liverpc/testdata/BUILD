@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["client.go"],
-    importpath = "go-library/pkg/net/rpc/liverpc/testdata",
+    importpath = "github.com/welcome112s/go-library/pkg/net/rpc/liverpc/testdata",
     tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [

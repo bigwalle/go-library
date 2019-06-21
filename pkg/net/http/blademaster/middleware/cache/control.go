@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	bm "go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/http/blademaster/middleware/cache/store"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/cache/store"
 )
 
 const (

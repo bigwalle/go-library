@@ -11,8 +11,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go-library/pkg/log"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/log"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 var isClient bool

@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"go-library/pkg/ecode"
-	"go-library/pkg/log"
-	bm "go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/metadata"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 const (

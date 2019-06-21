@@ -28,7 +28,7 @@ go_library(
         ["*.go"],
         exclude = ["*_test.go"],
     ),
-    importpath = "go-library/pkg/net/trace",
+    importpath = "github.com/welcome112s/go-library/pkg/net/trace",
     tags = ["manual"],
     deps = [
         "//library/conf/dsn:go_default_library",

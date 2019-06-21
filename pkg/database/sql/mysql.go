@@ -1,10 +1,10 @@
 package sql
 
 import (
-	"go-library/pkg/log"
-	"go-library/pkg/net/netutil/breaker"
-	"go-library/pkg/stat"
-	"go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/stat"
+	"github.com/welcome112s/go-library/pkg/time"
 
 	// database driver
 	_ "github.com/go-sql-driver/mysql"

@@ -11,10 +11,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	cmcd "go-library/pkg/ecode"
-	"go-library/pkg/log"
-	xhttp "go-library/pkg/net/http/blademaster"
-	xtime "go-library/pkg/time"
+	cmcd "github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	xhttp "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 const (

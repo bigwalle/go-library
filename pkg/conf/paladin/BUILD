@@ -19,7 +19,7 @@ go_library(
         "toml.go",
         "value.go",
     ],
-    importpath = "go-library/pkg/conf/paladin",
+    importpath = "github.com/welcome112s/go-library/pkg/conf/paladin",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

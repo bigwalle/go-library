@@ -13,16 +13,16 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/ecode"
-	"go-library/pkg/exp/feature"
-	"go-library/pkg/log"
-	"go-library/pkg/naming"
-	bm "go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/netutil"
-	"go-library/pkg/net/netutil/breaker"
-	xtime "go-library/pkg/time"
-	"go-library/pkg/xstr"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/exp/feature"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/naming"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/netutil"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	xtime "github.com/welcome112s/go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/xstr"
 )
 
 const (

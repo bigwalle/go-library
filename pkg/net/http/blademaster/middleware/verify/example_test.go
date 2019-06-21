@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	bm "go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/http/blademaster/middleware/verify"
-	"go-library/pkg/net/metadata"
-	xtime "go-library/pkg/time"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/verify"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 // This example create a identify middleware instance and attach to several path,

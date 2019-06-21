@@ -15,7 +15,7 @@ go_binary(
 go_library(
     name = "go_default_library",
     srcs = ["server.go"],
-    importpath = "go-library/pkg/net/rpc/warden/benchmark/bench/server",
+    importpath = "github.com/welcome112s/go-library/pkg/net/rpc/warden/benchmark/bench/server",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

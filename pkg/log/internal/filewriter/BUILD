@@ -20,7 +20,7 @@ go_library(
         "filewriter.go",
         "option.go",
     ],
-    importpath = "go-library/pkg/log/internal/filewriter",
+    importpath = "github.com/welcome112s/go-library/pkg/log/internal/filewriter",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/net/trace"
 )
 
 func TestTrace(t *testing.T) {

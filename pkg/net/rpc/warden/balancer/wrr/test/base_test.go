@@ -9,14 +9,14 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/naming"
-	"go-library/pkg/net/netutil/breaker"
-	"go-library/pkg/net/rpc/warden"
-	"go-library/pkg/net/rpc/warden/balancer/wrr"
-	pb "go-library/pkg/net/rpc/warden/proto/testproto"
-	"go-library/pkg/net/rpc/warden/resolver"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden/balancer/wrr"
+	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/proto/testproto"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden/resolver"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 
 	"google.golang.org/grpc"
 )

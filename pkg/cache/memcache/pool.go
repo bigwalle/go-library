@@ -5,9 +5,9 @@ import (
 	"io"
 	"time"
 
-	"go-library/pkg/container/pool"
-	"go-library/pkg/stat"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/container/pool"
+	"github.com/welcome112s/go-library/pkg/stat"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 var stats = stat.Cache

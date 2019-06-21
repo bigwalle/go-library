@@ -34,7 +34,7 @@ go_library(
         "trace.go",
         "util.go",
     ],
-    importpath = "go-library/pkg/cache/memcache",
+    importpath = "github.com/welcome112s/go-library/pkg/cache/memcache",
     tags = ["automanaged"],
     deps = [
         "//library/container/pool:go_default_library",

@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"go-library/pkg/log/internal/filewriter"
+	"github.com/welcome112s/go-library/pkg/log/internal/filewriter"
 )
 
 // level idx

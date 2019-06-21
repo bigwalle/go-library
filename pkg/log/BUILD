@@ -42,7 +42,7 @@ go_library(
         "util.go",
         "verbose.go",
     ],
-    importpath = "go-library/pkg/log",
+    importpath = "github.com/welcome112s/go-library/pkg/log",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

@@ -22,7 +22,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["proxy.go"],
-    importpath = "go-library/pkg/net/http/blademaster/middleware/proxy",
+    importpath = "github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/proxy",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

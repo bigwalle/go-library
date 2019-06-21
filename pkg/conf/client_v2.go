@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"go-library/pkg/ecode"
-	"go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
 )
 
 const (

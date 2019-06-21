@@ -9,7 +9,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["status.go"],
-    importpath = "go-library/pkg/net/rpc/warden/status",
+    importpath = "github.com/welcome112s/go-library/pkg/net/rpc/warden/status",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

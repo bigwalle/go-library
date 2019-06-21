@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["helper.go"],
-    importpath = "go-library/pkg/net/rpc/warden/resolver/livezk",
+    importpath = "github.com/welcome112s/go-library/pkg/net/rpc/warden/resolver/livezk",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [
