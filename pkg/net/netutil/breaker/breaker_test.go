@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/pkg/time"
 )
 
 func TestGroup(t *testing.T) {

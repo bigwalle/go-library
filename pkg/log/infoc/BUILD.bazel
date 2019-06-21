@@ -7,7 +7,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["infoc.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/log/infoc",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/pkg/log/infoc",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

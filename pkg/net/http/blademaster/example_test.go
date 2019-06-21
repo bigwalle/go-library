@@ -5,11 +5,11 @@ import (
 	"log"
 	"time"
 
-	"go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/http/blademaster/binding"
-	"go-library/pkg/net/http/blademaster/middleware/auth"
-	"go-library/pkg/net/http/blademaster/middleware/verify"
-	"go-library/pkg/net/http/blademaster/tests"
+	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/binding"
+	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/auth"
+	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/verify"
+	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/tests"
 )
 
 // This example start a http server and listen at port 8080,

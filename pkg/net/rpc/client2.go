@@ -8,12 +8,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/log"
-	"go-library/pkg/naming"
-	"go-library/pkg/naming/discovery"
-	"go-library/pkg/net/netutil/breaker"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/pkg/naming/discovery"
+	"github.com/welcome112s/go-library/pkg/pkg/net/netutil/breaker"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
 )
 
 const (

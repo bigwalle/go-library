@@ -10,14 +10,14 @@ import (
 	"sync"
 	"time"
 
-	"go-library/pkg/conf/dsn"
-	"go-library/pkg/log"
-	nmd "go-library/pkg/net/metadata"
-	"go-library/pkg/net/trace"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/conf/dsn"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
+	nmd "github.com/welcome112s/go-library/pkg/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/pkg/net/trace"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
 	//this package is for json format response
-	_ "go-library/pkg/net/rpc/warden/encoding/json"
-	"go-library/pkg/net/rpc/warden/status"
+	_ "github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden/encoding/json"
+	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden/status"
 
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"

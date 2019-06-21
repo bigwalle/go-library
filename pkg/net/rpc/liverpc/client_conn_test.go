@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/metadata"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

@@ -36,7 +36,7 @@ go_library(
         "script.go",
         "trace.go",
     ],
-    importpath = "go-library/pkg/cache/redis",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/cache/redis",
     tags = ["automanaged"],
     deps = [
         "//library/container/pool:go_default_library",

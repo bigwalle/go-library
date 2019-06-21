@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/log"
-	"go-library/pkg/queue/databus"
-	"go-library/pkg/sync/errgroup"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/queue/databus"
+	"github.com/welcome112s/go-library/pkg/pkg/sync/errgroup"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
 )
 
 type testMsg struct {

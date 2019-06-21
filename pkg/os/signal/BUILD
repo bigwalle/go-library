@@ -21,6 +21,6 @@ filegroup(
 go_library(
     name = "go_default_library",
     srcs = ["signal.go"],
-    importpath = "go-library/pkg/os/signal",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/os/signal",
     tags = ["automanaged"],
 )

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
 
 	"github.com/pkg/errors"
 )

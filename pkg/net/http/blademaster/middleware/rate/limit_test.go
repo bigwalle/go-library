@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	bm "go-library/pkg/net/http/blademaster"
+	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
 )
 
 func TestLimiterUrl(t *testing.T) {

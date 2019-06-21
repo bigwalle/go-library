@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/ecode"
-	"go-library/pkg/log"
-	"go-library/pkg/naming"
-	"go-library/pkg/naming/discovery"
-	rcontext "go-library/pkg/net/rpc/context"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/naming/discovery"
+	rcontext "github.com/welcome112s/go-library/pkg/pkg/pkg/net/rpc/context"
 )
 
 func TestBreaker(t *testing.T) {

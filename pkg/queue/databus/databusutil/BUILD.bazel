@@ -10,7 +10,7 @@ go_library(
         "doc.go",
         "group.go",
     ],
-    importpath = "go-library/pkg/queue/databus/databusutil",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/queue/databus/databusutil",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

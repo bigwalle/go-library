@@ -18,7 +18,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["summary.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/stat/summary",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/pkg/stat/summary",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

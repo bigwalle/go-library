@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/log/internal"
-	"go-library/pkg/net/metadata"
-	"go-library/pkg/net/trace"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/log/internal"
+	"github.com/welcome112s/go-library/pkg/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/pkg/net/trace"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
 )
 
 const (

@@ -1,7 +1,7 @@
 package stat
 
 import (
-	"github.com/welcome112s/go-library/pkg/stat/prom"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/stat/prom"
 )
 
 // Stat interface.

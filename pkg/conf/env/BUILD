@@ -9,7 +9,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["env.go"],
-    importpath = "go-library/pkg/conf/env",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/conf/env",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

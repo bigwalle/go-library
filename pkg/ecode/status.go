@@ -6,7 +6,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/welcome112s/go-library/pkg/ecode/internal/types"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/ecode/internal/types"
 )
 
 // Error new status with code and message

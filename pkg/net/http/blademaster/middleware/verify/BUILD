@@ -25,7 +25,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["verify.go"],
-    importpath = "go-library/pkg/net/http/blademaster/middleware/verify",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/verify",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

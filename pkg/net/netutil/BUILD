@@ -28,7 +28,7 @@ go_library(
         "backoff.go",
         "listen.go",
     ],
-    importpath = "go-library/pkg/net/netutil",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/netutil",
     tags = ["automanaged"],
 )
 

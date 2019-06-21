@@ -4,7 +4,7 @@ import (
 	"sync"
 	"testing"
 
-	"go-library/pkg/log/infoc"
+	"github.com/welcome112s/go-library/pkg/pkg/log/infoc"
 )
 
 var (

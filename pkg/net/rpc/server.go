@@ -19,13 +19,13 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"go-library/pkg/conf/dsn"
-	"go-library/pkg/conf/env"
-	xlog "go-library/pkg/log"
-	"go-library/pkg/net/metadata"
-	"go-library/pkg/net/rpc/context"
-	"go-library/pkg/net/rpc/interceptor"
-	"go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/pkg/conf/dsn"
+	"github.com/welcome112s/go-library/pkg/pkg/conf/env"
+	xlog "github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/context"
+	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/interceptor"
+	"github.com/welcome112s/go-library/pkg/pkg/net/trace"
 
 	pkgerr "github.com/pkg/errors"
 )

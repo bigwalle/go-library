@@ -3,8 +3,8 @@ package store
 import (
 	"context"
 
-	"go-library/pkg/cache/memcache"
-	"go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/cache/memcache"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
 )
 
 // Memcache represents the cache with memcached persistence

@@ -21,7 +21,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["livezk.go"],
-    importpath = "go-library/pkg/naming/livezk",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/naming/livezk",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

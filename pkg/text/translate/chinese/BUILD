@@ -20,7 +20,7 @@ go_library(
         "dict.go",
         "opencc.go",
     ],
-    importpath = "go-library/pkg/text/translate/chinese",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/text/translate/chinese",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

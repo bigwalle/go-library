@@ -6,8 +6,8 @@ import (
 	"net/http/httptrace"
 	"strconv"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/trace"
 )
 
 const _defaultComponentName = "net/http"

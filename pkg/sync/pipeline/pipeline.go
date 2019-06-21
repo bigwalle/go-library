@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/metadata"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/pkg/time"
 )
 
 // ErrFull channel full error

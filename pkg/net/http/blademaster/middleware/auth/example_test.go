@@ -3,10 +3,10 @@ package auth_test
 import (
 	"fmt"
 
-	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/auth"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
+	bm "github.com/welcome112s/go-library/pkg/pkg/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/http/blademaster/middleware/auth"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/rpc/warden"
 )
 
 // This example create a identify middleware instance and attach to several path,

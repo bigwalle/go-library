@@ -9,7 +9,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["client.go"],
-    importpath = "go-library/pkg/net/rpc/warden/examples/grpcDebug",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden/examples/grpcDebug",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["http.go"],
-    importpath = "go-library/pkg/rate/limit/bench/stress/http",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/rate/limit/bench/stress/http",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

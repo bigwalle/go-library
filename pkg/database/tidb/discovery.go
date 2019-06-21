@@ -6,10 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/naming/discovery"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/naming/discovery"
 )
 
 var _schema = "tidb://"

@@ -27,7 +27,7 @@ go_library(
         "query.go",
         "update.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/database/elastic",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/pkg/database/elastic",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

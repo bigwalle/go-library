@@ -7,10 +7,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"go-library/pkg/log"
-	"go-library/pkg/net/trace"
-	"go-library/pkg/rate/limit/bench/stress/conf"
-	"go-library/pkg/rate/limit/bench/stress/http"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/pkg/rate/limit/bench/stress/conf"
+	"github.com/welcome112s/go-library/pkg/pkg/rate/limit/bench/stress/http"
 )
 
 func main() {

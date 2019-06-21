@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["stat.go"],
-    importpath = "go-library/pkg/stat",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/stat",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = ["//library/stat/prom:go_default_library"],

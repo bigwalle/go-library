@@ -6,7 +6,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["statsd.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/stat/statsd",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/pkg/stat/statsd",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = ["//library/log:go_default_library"],

@@ -8,13 +8,13 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/cache/memcache"
-	"go-library/pkg/container/pool"
-	"go-library/pkg/ecode"
-	"go-library/pkg/log"
-	bm "go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/netutil/breaker"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/cache/memcache"
+	"github.com/welcome112s/go-library/pkg/pkg/container/pool"
+	"github.com/welcome112s/go-library/pkg/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
+	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/pkg/net/netutil/breaker"
+	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
 )
 
 var (

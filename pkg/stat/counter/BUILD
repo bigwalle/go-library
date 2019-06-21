@@ -25,7 +25,7 @@ go_library(
         "gauge.go",
         "rolling.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/stat/counter",
+    importpath = "github.com/welcome112s/go-library/pkg/pkg/pkg/stat/counter",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

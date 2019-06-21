@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"sync"
 
-	"go-library/pkg/log"
-	"go-library/pkg/stat/prom"
+	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/stat/prom"
 )
 
 var (

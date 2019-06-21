@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/conf/env"
 
 	"github.com/naoina/toml"
 	"github.com/stretchr/testify/assert"

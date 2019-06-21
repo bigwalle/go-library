@@ -1,4 +1,4 @@
-module github.com/welcome112s/go-library
+module github.com/welcome112s/go-library/pkg/pkg
 
 go 1.12
 
@@ -22,7 +22,7 @@ require (
 	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a
 	github.com/stretchr/testify v1.3.0
 	github.com/tsuna/gohbase v0.0.0-20190201102810-d3184c1526df
-	github.com/welcome112s/go-library v0.0.0-20190621050001-4a09ffe310de
+	github.com/welcome112s/go-library/pkg/pkg v0.0.0-20190621050001-4a09ffe310de
 	golang.org/x/net v0.0.0-20190311183353-d8887717615a
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
 	google.golang.org/grpc v1.20.1

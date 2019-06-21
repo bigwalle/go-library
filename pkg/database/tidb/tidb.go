@@ -1,10 +1,10 @@
 package tidb
 
 import (
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/stat"
-	"github.com/welcome112s/go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/stat"
+	"github.com/welcome112s/go-library/pkg/pkg/pkg/time"
 
 	// database driver
 	_ "github.com/go-sql-driver/mysql"
