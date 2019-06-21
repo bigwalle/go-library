@@ -4,12 +4,10 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/welcome112s/go-library/pkg/log/internal"
 	"io"
 	"os"
 	"strconv"
 	"time"
-
 	"github.com/welcome112s/go-library/pkg/conf/env"
 	"github.com/welcome112s/go-library/pkg/log/internal"
 	"github.com/welcome112s/go-library/pkg/stat/prom"
