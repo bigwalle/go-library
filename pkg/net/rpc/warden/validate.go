@@ -3,7 +3,7 @@ package warden
 import (
 	"context"
 
-	"go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/ecode"
 
 	"google.golang.org/grpc"
 	"gopkg.in/go-playground/validator.v9"

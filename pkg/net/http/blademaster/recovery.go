@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime"
 
-	"go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/log"
 )
 
 // Recovery returns a middleware that recovers from any panics and writes a 500 if there was one.

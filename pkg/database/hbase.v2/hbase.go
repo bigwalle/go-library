@@ -9,9 +9,9 @@ import (
 	"github.com/tsuna/gohbase"
 	"github.com/tsuna/gohbase/hrpc"
 
-	"go-library/pkg/log"
-	"go-library/pkg/net/trace"
-	"go-library/pkg/stat"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/stat"
 )
 
 var stats = stat.DB

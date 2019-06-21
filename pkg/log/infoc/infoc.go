@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"go-library/pkg/log"
-	"go-library/pkg/net/metadata"
-	"go-library/pkg/net/netutil"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/netutil"
 	xtime "go-library/pkg/time"
 )
 

@@ -2,10 +2,10 @@ package auth
 
 import (
 	idtv1 "go-common/app/service/main/identify/api/grpc"
-	"go-library/pkg/ecode"
-	bm "go-library/pkg/net/http/blademaster"
-	"go-library/pkg/net/metadata"
-	"go-library/pkg/net/rpc/warden"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
 
 	"github.com/pkg/errors"
 )

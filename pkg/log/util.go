@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"sync"
 
-	"go-library/pkg/conf/env"
-	"go-library/pkg/net/metadata"
-	"go-library/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/conf/env"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/trace"
 )
 
 var fm sync.Map

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	xtime "go-library/pkg/time"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 type cfg1 struct {
@@ -66,7 +66,7 @@ func TestDecodeQuery(t *testing.T) {
 			},
 		},
 		{
-			name: "test go-library/pkg/time",
+			name: "test github.com/welcome112s/go-library/pkg/time",
 			args: args{
 				query: url.Values{
 					"timeout": {"1s"},
@@ -77,7 +77,7 @@ func TestDecodeQuery(t *testing.T) {
 			cfg:  &cfg2{xtime.Duration(time.Second)},
 		},
 		{
-			name: "test empty go-library/pkg/time",
+			name: "test empty github.com/welcome112s/go-library/pkg/time",
 			args: args{
 				query: url.Values{},
 				v:     &cfg2{},
@@ -86,7 +86,7 @@ func TestDecodeQuery(t *testing.T) {
 			cfg:  &cfg2{},
 		},
 		{
-			name: "test go-library/pkg/time",
+			name: "test github.com/welcome112s/go-library/pkg/time",
 			args: args{
 				query: url.Values{},
 				v:     &cfg4{},

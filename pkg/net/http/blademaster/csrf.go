@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/log"
 )
 
 var (

@@ -13,12 +13,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go-library/pkg/conf/dsn"
-	"go-library/pkg/log"
-	"go-library/pkg/net/ip"
-	"go-library/pkg/net/metadata"
-	"go-library/pkg/stat"
-	xtime "go-library/pkg/time"
+	"github.com/welcome112s/go-library/pkg/conf/dsn"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/ip"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/stat"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 
 	"github.com/pkg/errors"
 )
