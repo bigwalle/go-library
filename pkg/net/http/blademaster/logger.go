@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"go-library/pkg/ecode"
+	"go-library/pkg/log"
+	"go-library/pkg/net/metadata"
 )
 
 // Logger is logger  middleware

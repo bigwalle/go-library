@@ -25,7 +25,7 @@ go_library(
         "ip.go",
         "zone.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/net/ip",
+    importpath = "go-library/pkg/net/ip",
     tags = ["automanaged"],
 )
 

@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/naming"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/naming"
+	xtime "go-library/pkg/time"
 )
 
 var appdID = "main.arch.test6"

@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/log"
+	bm "go-library/pkg/net/http/blademaster"
+	xtime "go-library/pkg/time"
 
 	"github.com/pkg/errors"
 )

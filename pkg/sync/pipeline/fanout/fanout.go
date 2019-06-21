@@ -6,10 +6,10 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/trace"
-	"github.com/welcome112s/go-library/pkg/stat/prom"
+	"go-library/pkg/log"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/net/trace"
+	"go-library/pkg/stat/prom"
 )
 
 var (

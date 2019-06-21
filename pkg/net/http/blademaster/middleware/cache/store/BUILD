@@ -12,7 +12,7 @@ go_library(
         "memcache.go",
         "store.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/cache/store",
+    importpath = "go-library/pkg/net/http/blademaster/middleware/cache/store",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/net/netutil/breaker"
+	xtime "go-library/pkg/time"
 )
 
 // ExampleGroup show group usage.

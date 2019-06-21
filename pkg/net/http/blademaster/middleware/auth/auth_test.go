@@ -10,13 +10,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/ecode"
+	"go-library/pkg/log"
+	bm "go-library/pkg/net/http/blademaster"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/net/netutil/breaker"
+	"go-library/pkg/net/rpc/warden"
+	xtime "go-library/pkg/time"
 
 	"github.com/stretchr/testify/assert"
 )

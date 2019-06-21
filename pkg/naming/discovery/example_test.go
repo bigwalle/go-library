@@ -3,8 +3,8 @@ package discovery_test
 import (
 	"context"
 	"fmt"
-	"github.com/welcome112s/go-library/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/naming/discovery"
+	"go-library/pkg/naming"
+	"go-library/pkg/naming/discovery"
 	"time"
 )
 

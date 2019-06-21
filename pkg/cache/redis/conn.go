@@ -27,7 +27,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/stat"
+	"go-library/pkg/stat"
 
 	"github.com/pkg/errors"
 )

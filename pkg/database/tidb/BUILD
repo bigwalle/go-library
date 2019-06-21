@@ -27,7 +27,7 @@ go_library(
         "sql.go",
         "tidb.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/database/tidb",
+    importpath = "go-library/pkg/database/tidb",
     tags = ["automanaged"],
     deps = [
         "//library/conf/env:go_default_library",

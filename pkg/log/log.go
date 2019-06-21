@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log/internal"
-	"github.com/welcome112s/go-library/pkg/stat/prom"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/log/internal"
+	"go-library/pkg/stat/prom"
+	xtime "go-library/pkg/time"
 )
 
 // Config log config.

@@ -1,1 +1,1 @@
-# github.com/welcome112s/go-library
+# go-library

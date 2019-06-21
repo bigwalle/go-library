@@ -20,12 +20,12 @@ import (
 
 	xhttp "net/http"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/log"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/stat"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/log"
+	"go-library/pkg/net/metadata"
+	"go-library/pkg/net/netutil/breaker"
+	"go-library/pkg/stat"
+	xtime "go-library/pkg/time"
 
 	"github.com/gogo/protobuf/proto"
 	pkgerr "github.com/pkg/errors"

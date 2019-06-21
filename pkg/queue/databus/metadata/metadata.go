@@ -3,7 +3,7 @@ package metadata
 import (
 	"context"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"go-library/pkg/net/metadata"
 )
 
 // FromContext get metadata from context.

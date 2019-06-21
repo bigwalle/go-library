@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/queue/databus"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/queue/databus"
+	xtime "go-library/pkg/time"
 )
 
 const (

@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/exp/feature"
-	"github.com/welcome112s/go-library/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/ecode"
+	"go-library/pkg/exp/feature"
+	"go-library/pkg/naming"
+	"go-library/pkg/net/http/blademaster"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

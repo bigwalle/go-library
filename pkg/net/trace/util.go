@@ -8,8 +8,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/net/metadata"
 )
 
 var _hostHash byte

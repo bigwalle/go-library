@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"go-library/pkg/net/metadata"
 
 	"github.com/stretchr/testify/assert"
 )

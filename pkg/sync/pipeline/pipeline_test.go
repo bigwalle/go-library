@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/net/metadata"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/net/metadata"
+	xtime "go-library/pkg/time"
 )
 
 func TestPipeline(t *testing.T) {

@@ -18,7 +18,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["limit.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/rate/limit",
+    importpath = "go-library/pkg/rate/limit",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

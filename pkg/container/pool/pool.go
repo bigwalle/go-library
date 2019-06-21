@@ -6,7 +6,7 @@ import (
 	"io"
 	"time"
 
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	xtime "go-library/pkg/time"
 )
 
 var (

@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/queue/databus"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/queue/databus"
 
 	"github.com/pkg/errors"
 )

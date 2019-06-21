@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/log/internal"
+	"go-library/pkg/log/internal"
 )
 
 func TestJsonEncode(t *testing.T) {

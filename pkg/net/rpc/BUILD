@@ -34,7 +34,7 @@ go_library(
         "server.go",
         "trace.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/net/rpc",
+    importpath = "go-library/pkg/net/rpc",
     tags = ["automanaged"],
     deps = [
         "//library/conf/dsn:go_default_library",

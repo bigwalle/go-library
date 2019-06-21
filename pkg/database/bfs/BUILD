@@ -18,7 +18,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["upload.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/database/bfs",
+    importpath = "go-library/pkg/database/bfs",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

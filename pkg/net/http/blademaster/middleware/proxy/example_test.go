@@ -1,8 +1,8 @@
 package proxy_test
 
 import (
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/proxy"
+	"go-library/pkg/net/http/blademaster"
+	"go-library/pkg/net/http/blademaster/middleware/proxy"
 )
 
 // This example create several reverse proxy to show how to use proxy middleware.

@@ -7,7 +7,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["errgroup.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/sync/errgroup",
+    importpath = "go-library/pkg/sync/errgroup",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

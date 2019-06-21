@@ -3,9 +3,9 @@ package report
 import (
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/queue/databus"
-	xtime "github.com/welcome112s/go-library/pkg/time"
+	"go-library/pkg/conf/env"
+	"go-library/pkg/queue/databus"
+	xtime "go-library/pkg/time"
 )
 
 var (

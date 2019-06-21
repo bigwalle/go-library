@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/cache/memcache"
-	"github.com/welcome112s/go-library/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
+	"go-library/pkg/cache/memcache"
+	"go-library/pkg/log"
+	bm "go-library/pkg/net/http/blademaster"
 )
 
 // Session http session.

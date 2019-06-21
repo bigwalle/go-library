@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/welcome112s/go-library/pkg/net/trace"
+	"go-library/pkg/net/trace"
 )
 
 const (

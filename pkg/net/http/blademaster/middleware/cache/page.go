@@ -8,9 +8,9 @@ import (
 	"net/url"
 	"sync"
 
-	"github.com/welcome112s/go-library/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/net/http/blademaster/middleware/cache/store"
+	"go-library/pkg/log"
+	bm "go-library/pkg/net/http/blademaster"
+	"go-library/pkg/net/http/blademaster/middleware/cache/store"
 
 	proto "github.com/gogo/protobuf/proto"
 )

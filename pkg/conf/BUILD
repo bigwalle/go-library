@@ -31,7 +31,7 @@ go_library(
         "client.go",
         "client_v2.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/conf",
+    importpath = "go-library/pkg/conf",
     tags = ["automanaged"],
     deps = [
         "//library/conf/env:go_default_library",
