@@ -1,4 +1,4 @@
-module go-library
+module github.com/welcome112s/go-library
 
 go 1.12
 
