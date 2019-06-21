@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/pkg/pkg/pkg/net/rpc/warden/proto/testproto"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/rpc/warden/resolver"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/pkg/time"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden"
+	pb "github.com/welcome112s/go-library/pkg/net/rpc/warden/proto/testproto"
+	"github.com/welcome112s/go-library/pkg/net/rpc/warden/resolver"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 type testServer struct {

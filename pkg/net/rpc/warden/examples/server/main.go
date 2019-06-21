@@ -9,12 +9,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/ecode"
-	epb "github.com/welcome112s/go-library/pkg/pkg/ecode/pb"
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden"
-	pb "github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden/proto/testproto"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/ecode"
+	epb "github.com/welcome112s/go-library/ecode/pb"
+	"github.com/welcome112s/go-library/log"
+	"github.com/welcome112s/go-library/net/rpc/warden"
+	pb "github.com/welcome112s/go-library/net/rpc/warden/proto/testproto"
+	xtime "github.com/welcome112s/go-library/time"
 
 	"github.com/golang/protobuf/ptypes"
 	"google.golang.org/grpc"

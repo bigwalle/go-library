@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/log/infoc"
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/metadata"
+	"github.com/welcome112s/go-library/log"
+	"github.com/welcome112s/go-library/log/infoc"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/metadata"
 )
 
 // AntiCheat send anti-cheating info to berserker.

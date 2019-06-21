@@ -4,9 +4,9 @@
 package testdata
 
 import (
-	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/liverpc"
-	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/liverpc/testdata/v1"
-	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/liverpc/testdata/v2"
+	"github.com/welcome112s/go-library/net/rpc/liverpc"
+	"github.com/welcome112s/go-library/net/rpc/liverpc/testdata/v1"
+	"github.com/welcome112s/go-library/net/rpc/liverpc/testdata/v2"
 )
 
 // Client that represents a liverpc room service api

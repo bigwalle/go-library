@@ -17,8 +17,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/conf/env"
+	"github.com/welcome112s/go-library/log"
 )
 
 const (

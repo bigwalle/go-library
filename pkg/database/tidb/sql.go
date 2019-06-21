@@ -8,9 +8,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/naming"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/netutil/breaker"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/naming"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	"github.com/welcome112s/go-library/pkg/net/trace"
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/pkg/errors"

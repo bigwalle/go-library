@@ -16,7 +16,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["cache.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/cache",
+    importpath = "github.com/welcome112s/go-library/cache",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

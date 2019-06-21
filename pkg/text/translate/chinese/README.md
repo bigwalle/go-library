@@ -14,7 +14,7 @@ import (
 	"log"
 	"context"
 
-	"github.com/welcome112s/go-library/pkg/pkg/text/translate/chinese"
+	"github.com/welcome112s/go-library/text/translate/chinese"
 )
 
 func main() {

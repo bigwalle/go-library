@@ -1,5 +1,4 @@
-module github.com/welcome112s/go-library/pkg/pkg
-
+module github.com/welcome112s/go-library
 go 1.12
 
 require (

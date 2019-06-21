@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	xtime "github.com/welcome112s/go-library/pkg/pkg/pkg/time"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 // Config broker config.

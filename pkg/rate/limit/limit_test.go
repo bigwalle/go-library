@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/rate"
+	"github.com/welcome112s/go-library/rate"
 )
 
 func worker(qps int64, ch chan struct{}) {

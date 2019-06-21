@@ -3,10 +3,10 @@ package dao
 import (
 	"context"
 
-	"github.com/welcome112s/go-library/pkg/pkg/cache/memcache"
-	"github.com/welcome112s/go-library/pkg/pkg/cache/redis"
-	xsql "github.com/welcome112s/go-library/pkg/pkg/database/sql"
-	"github.com/welcome112s/go-library/pkg/pkg/rate/limit/bench/stress/conf"
+	"github.com/welcome112s/go-library/cache/memcache"
+	"github.com/welcome112s/go-library/cache/redis"
+	xsql "github.com/welcome112s/go-library/database/sql"
+	"github.com/welcome112s/go-library/rate/limit/bench/stress/conf"
 )
 
 // Dao dao

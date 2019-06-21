@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/tag"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/http/blademaster/middleware/tag"
 
 	"github.com/stretchr/testify/assert"
 )

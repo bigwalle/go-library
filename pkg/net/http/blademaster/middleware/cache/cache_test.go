@@ -13,13 +13,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/cache/memcache"
-	"github.com/welcome112s/go-library/pkg/pkg/container/pool"
-	"github.com/welcome112s/go-library/pkg/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/cache/store"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/cache/memcache"
+	"github.com/welcome112s/go-library/container/pool"
+	"github.com/welcome112s/go-library/ecode"
+	"github.com/welcome112s/go-library/log"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/http/blademaster/middleware/cache/store"
+	xtime "github.com/welcome112s/go-library/time"
 
 	"github.com/stretchr/testify/assert"
 )

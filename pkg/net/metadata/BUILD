@@ -25,7 +25,7 @@ go_library(
         "key.go",
         "metadata.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/metadata",
+    importpath = "github.com/welcome112s/go-library/net/metadata",
     tags = ["automanaged"],
 )
 

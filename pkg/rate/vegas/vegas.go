@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/rate"
+	"github.com/welcome112s/go-library/rate"
 )
 
 const (

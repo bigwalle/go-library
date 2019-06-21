@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/welcome112s/go-library/pkg/pkg/exp/feature"
+	"github.com/welcome112s/go-library/exp/feature"
 )
 
 var (

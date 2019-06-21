@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	limit "github.com/welcome112s/go-library/pkg/pkg/pkg/ratelimit"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/stat/metric"
+	limit "github.com/welcome112s/go-library/pkg/ratelimit"
+	"github.com/welcome112s/go-library/pkg/stat/metric"
 
 	"github.com/stretchr/testify/assert"
 )

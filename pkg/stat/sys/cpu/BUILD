@@ -36,7 +36,7 @@ go_library(
             "cpu_other.go",
         ],
     }),
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/stat/sys/cpu",
+    importpath = "github.com/welcome112s/go-library/stat/sys/cpu",
     tags = ["manual"],
     visibility = ["//visibility:public"],
     deps = [

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/ecode"
 )
 
 // Config codel config.

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
+	"github.com/welcome112s/go-library/pkg/log"
 )
 
 func Test_logFn(t *testing.T) {

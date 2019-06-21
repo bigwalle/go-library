@@ -1,8 +1,8 @@
 package cache
 
 import (
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/cache/store"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/http/blademaster/middleware/cache/store"
 )
 
 // Cache is the abstract struct for any cache impl

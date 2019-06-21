@@ -12,10 +12,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/netutil"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/pkg/log"
+	"github.com/welcome112s/go-library/pkg/net/metadata"
+	"github.com/welcome112s/go-library/pkg/net/netutil"
+	xtime "github.com/welcome112s/go-library/time"
 )
 
 const (

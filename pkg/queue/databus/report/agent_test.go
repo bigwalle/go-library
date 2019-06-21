@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/queue/databus"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/queue/databus"
+	xtime "github.com/welcome112s/go-library/time"
 )
 
 var (

@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"sync/atomic"
 
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/sync/errgroup"
+	"github.com/welcome112s/go-library/log"
+	"github.com/welcome112s/go-library/sync/errgroup"
 )
 
 const (

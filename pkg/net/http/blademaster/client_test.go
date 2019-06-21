@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/tests"
-	"github.com/welcome112s/go-library/pkg/pkg/net/netutil/breaker"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/ecode"
+	"github.com/welcome112s/go-library/net/http/blademaster/tests"
+	"github.com/welcome112s/go-library/net/netutil/breaker"
+	xtime "github.com/welcome112s/go-library/time"
 )
 
 func TestClient(t *testing.T) {

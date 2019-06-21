@@ -24,7 +24,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["antispam.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/antispam",
+    importpath = "github.com/welcome112s/go-library/net/http/blademaster/middleware/antispam",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

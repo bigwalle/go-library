@@ -3,11 +3,11 @@ package antispam_test
 import (
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/cache/redis"
-	"github.com/welcome112s/go-library/pkg/pkg/container/pool"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/antispam"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/cache/redis"
+	"github.com/welcome112s/go-library/container/pool"
+	"github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/http/blademaster/middleware/antispam"
+	xtime "github.com/welcome112s/go-library/time"
 )
 
 // This example create a antispam middleware instance and attach to a blademaster engine,

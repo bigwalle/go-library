@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/cache/memcache"
-	"github.com/welcome112s/go-library/pkg/pkg/container/pool"
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/permit"
-	"github.com/welcome112s/go-library/pkg/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/pkg/net/netutil/breaker"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/cache/memcache"
+	"github.com/welcome112s/go-library/container/pool"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/http/blademaster/middleware/permit"
+	"github.com/welcome112s/go-library/net/metadata"
+	"github.com/welcome112s/go-library/net/netutil/breaker"
+	xtime "github.com/welcome112s/go-library/time"
 )
 
 // This example create a permit middleware instance and attach to several path,

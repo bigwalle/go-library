@@ -9,10 +9,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/welcome112s/go-library/pkg/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/naming"
-	wmeta "github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden/metadata"
+	"github.com/welcome112s/go-library/conf/env"
+	"github.com/welcome112s/go-library/log"
+	"github.com/welcome112s/go-library/naming"
+	wmeta "github.com/welcome112s/go-library/net/rpc/warden/metadata"
 
 	"github.com/dgryski/go-farm"
 	"github.com/pkg/errors"

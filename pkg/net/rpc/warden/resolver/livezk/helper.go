@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/welcome112s/go-library/pkg/pkg/naming"
-	lz "github.com/welcome112s/go-library/pkg/pkg/naming/livezk"
-	"github.com/welcome112s/go-library/pkg/pkg/net/ip"
+	"github.com/welcome112s/go-library/naming"
+	lz "github.com/welcome112s/go-library/naming/livezk"
+	"github.com/welcome112s/go-library/net/ip"
 )
 
 // Register self grpc service to live zookeeper

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/log"
 
 	"github.com/go-ego/cedar"
 )

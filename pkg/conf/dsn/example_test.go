@@ -3,8 +3,8 @@ package dsn_test
 import (
 	"log"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/conf/dsn"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/pkg/time"
+	"github.com/welcome112s/go-library/pkg/conf/dsn"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 // Config struct

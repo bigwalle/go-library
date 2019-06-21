@@ -3,13 +3,13 @@ package conf
 import (
 	"flag"
 
-	"github.com/welcome112s/go-library/pkg/pkg/cache/memcache"
-	"github.com/welcome112s/go-library/pkg/pkg/cache/redis"
-	"github.com/welcome112s/go-library/pkg/pkg/database/sql"
-	ecode "github.com/welcome112s/go-library/pkg/pkg/ecode/tip"
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/trace"
+	"github.com/welcome112s/go-library/cache/memcache"
+	"github.com/welcome112s/go-library/cache/redis"
+	"github.com/welcome112s/go-library/database/sql"
+	ecode "github.com/welcome112s/go-library/ecode/tip"
+	"github.com/welcome112s/go-library/log"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/trace"
 
 	"github.com/BurntSushi/toml"
 )

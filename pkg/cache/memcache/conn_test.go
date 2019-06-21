@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	test "github.com/welcome112s/go-library/pkg/pkg/cache/memcache/test"
+	test "github.com/welcome112s/go-library/cache/memcache/test"
 	"testing"
 	"time"
 

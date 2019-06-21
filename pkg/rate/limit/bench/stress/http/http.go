@@ -7,13 +7,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/rate"
-	"github.com/welcome112s/go-library/pkg/pkg/rate/limit"
-	"github.com/welcome112s/go-library/pkg/pkg/rate/limit/bench/stress/conf"
-	"github.com/welcome112s/go-library/pkg/pkg/rate/limit/bench/stress/service"
-	"github.com/welcome112s/go-library/pkg/pkg/rate/vegas"
+	"github.com/welcome112s/go-library/log"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/rate"
+	"github.com/welcome112s/go-library/rate/limit"
+	"github.com/welcome112s/go-library/rate/limit/bench/stress/conf"
+	"github.com/welcome112s/go-library/rate/limit/bench/stress/service"
+	"github.com/welcome112s/go-library/rate/vegas"
 )
 
 var (

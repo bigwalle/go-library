@@ -6,7 +6,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/welcome112s/go-library/pkg/pkg/log"
+	"github.com/welcome112s/go-library/log"
 
 	"github.com/pkg/errors"
 )

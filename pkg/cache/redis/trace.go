@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/trace"
+	"github.com/welcome112s/go-library/pkg/net/trace"
 )
 
 const (

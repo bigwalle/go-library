@@ -8,7 +8,7 @@ load(
 go_library(
     name = "go_default_library",
     srcs = ["rate.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/rate",
+    importpath = "github.com/welcome112s/go-library/rate",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
 )

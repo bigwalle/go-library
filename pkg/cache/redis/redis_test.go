@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/container/pool"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	"github.com/welcome112s/go-library/container/pool"
+	xtime "github.com/welcome112s/go-library/time"
 )
 
 var p *Pool

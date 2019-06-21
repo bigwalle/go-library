@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	xtime "github.com/welcome112s/go-library/pkg/pkg/time"
+	xtime "github.com/welcome112s/go-library/time"
 
 	"github.com/stretchr/testify/assert"
 )

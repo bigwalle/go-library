@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/net/rpc/liverpc"
+	"github.com/welcome112s/go-library/net/rpc/liverpc"
 )
 
 // WithHeader returns new context with header

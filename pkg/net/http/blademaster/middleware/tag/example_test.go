@@ -1,8 +1,8 @@
 package tag_test
 
 import (
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
-	"github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/tag"
+	"github.com/welcome112s/go-library/net/http/blademaster"
+	"github.com/welcome112s/go-library/net/http/blademaster/middleware/tag"
 )
 
 // This example create a tag middleware instance and attach to a global.

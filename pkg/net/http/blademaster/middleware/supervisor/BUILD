@@ -17,7 +17,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["supervisor.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster/middleware/supervisor",
+    importpath = "github.com/welcome112s/go-library/net/http/blademaster/middleware/supervisor",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

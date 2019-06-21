@@ -11,7 +11,7 @@ go_library(
         "resolver.go",
         "util.go",
     ],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/net/rpc/warden/resolver",
+    importpath = "github.com/welcome112s/go-library/net/rpc/warden/resolver",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = [

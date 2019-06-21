@@ -1,7 +1,7 @@
 package tag
 
 import (
-	bm "github.com/welcome112s/go-library/pkg/pkg/net/http/blademaster"
+	bm "github.com/welcome112s/go-library/net/http/blademaster"
 )
 
 // Tag create a tag into Keys field of context

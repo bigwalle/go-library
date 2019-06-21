@@ -18,7 +18,7 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["codel.go"],
-    importpath = "github.com/welcome112s/go-library/pkg/pkg/container/queue/aqm",
+    importpath = "github.com/welcome112s/go-library/container/queue/aqm",
     tags = ["automanaged"],
     visibility = ["//visibility:public"],
     deps = ["//library/ecode:go_default_library"],

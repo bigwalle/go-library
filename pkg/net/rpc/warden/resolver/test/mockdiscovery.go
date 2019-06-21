@@ -2,8 +2,8 @@ package resolver
 
 import (
 	"context"
-	"github.com/welcome112s/go-library/pkg/pkg/conf/env"
-	"github.com/welcome112s/go-library/pkg/pkg/naming"
+	"github.com/welcome112s/go-library/conf/env"
+	"github.com/welcome112s/go-library/naming"
 )
 
 type mockDiscoveryBuilder struct {

@@ -4,7 +4,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/welcome112s/go-library/pkg/pkg/ecode"
+	"github.com/welcome112s/go-library/ecode"
 )
 
 var (

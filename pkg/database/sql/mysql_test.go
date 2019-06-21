@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/net/netutil/breaker"
-	xtime "github.com/welcome112s/go-library/pkg/pkg/pkg/time"
+	"github.com/welcome112s/go-library/pkg/net/netutil/breaker"
+	xtime "github.com/welcome112s/go-library/pkg/time"
 )
 
 func TestMySQL(t *testing.T) {

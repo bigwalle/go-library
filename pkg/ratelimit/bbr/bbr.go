@@ -6,13 +6,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/container/group"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/log"
-	limit "github.com/welcome112s/go-library/pkg/pkg/pkg/ratelimit"
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/stat/metric"
+	"github.com/welcome112s/go-library/pkg/container/group"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/pkg/log"
+	limit "github.com/welcome112s/go-library/pkg/ratelimit"
+	"github.com/welcome112s/go-library/pkg/stat/metric"
 
-	cpustat "github.com/welcome112s/go-library/pkg/pkg/pkg/stat/sys/cpu"
+	cpustat "github.com/welcome112s/go-library/pkg/stat/sys/cpu"
 )
 
 var (

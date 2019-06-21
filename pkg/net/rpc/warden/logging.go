@@ -9,10 +9,10 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"
 
-	"github.com/welcome112s/go-library/pkg/pkg/pkg/ecode"
-	"github.com/welcome112s/go-library/pkg/pkg/log"
-	"github.com/welcome112s/go-library/pkg/pkg/net/metadata"
-	"github.com/welcome112s/go-library/pkg/pkg/stat"
+	"github.com/welcome112s/go-library/pkg/ecode"
+	"github.com/welcome112s/go-library/log"
+	"github.com/welcome112s/go-library/net/metadata"
+	"github.com/welcome112s/go-library/stat"
 )
 
 var (
