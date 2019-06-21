@@ -1,1 +1,1 @@
-# github.com/welcome112s/go-library/pkg/pkg/pkg
+# github.com/welcome112s/go-library/pkg

@@ -119,8 +119,8 @@ github.com/tsuna/gohbase v0.0.0-20190201102810-d3184c1526df h1:jYiwqXfoRWU6pJMzC
 github.com/tsuna/gohbase v0.0.0-20190201102810-d3184c1526df/go.mod h1:3HfLQly3YNLGxNv/2YOfmz30vcjG9hbuME1GpxoLlGs=
 github.com/urfave/cli v1.20.0 h1:fDqGv3UG/4jbVl/QkFwEdddtEDjh/5Ov6X+0B/3bPaw=
 github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
-github.com/welcome112s/go-library/pkg/pkg v0.0.0-20190621050001-4a09ffe310de h1:kVV2IWB/WyxN9VBkXgSS0IoO32IsNn8CxdYFPSzHlW0=
-github.com/welcome112s/go-library/pkg/pkg v0.0.0-20190621050001-4a09ffe310de/go.mod h1:QKnrBDZAfLorBeEXotNdle4UkXxgULYeiMZp081GW8U=
+github.com/welcome112s/go-library v0.0.0-20190621050001-4a09ffe310de h1:kVV2IWB/WyxN9VBkXgSS0IoO32IsNn8CxdYFPSzHlW0=
+github.com/welcome112s/go-library v0.0.0-20190621050001-4a09ffe310de/go.mod h1:QKnrBDZAfLorBeEXotNdle4UkXxgULYeiMZp081GW8U=
 gopkg.in/go-playground/assert.v1 v1.2.1 h1:xoYuJVE7KT85PYWrN730RguIQO0ePzVRfFMXadIrXTM=
 gopkg.in/go-playground/assert.v1 v1.2.1/go.mod h1:9RXL0bg/zibRAgZUYszZSwO/z8Y/a8bDuhia5mkpMnE=
 gopkg.in/go-playground/validator.v9 v9.26.0 h1:2NPPsBpD0ZoxshmLWewQru8rWmbT5JqSzz9D1ZrAjYQ=
